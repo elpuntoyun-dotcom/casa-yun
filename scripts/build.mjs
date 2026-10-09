@@ -324,6 +324,10 @@ function main() {
       cpSync(sp, dp, { recursive: true });
     }
   }
+  // Decap CMS 有时从站点根目录请求 /config.yml(忽略 base 标签),
+  // 在根目录也放一份,确保两种路径都能找到。
+  const adminCfg = join(dist, 'admin', 'config.yml');
+  if (existsSync(adminCfg)) cpSync(adminCfg, join(dist, 'config.yml'));
   console.log('built dist/index.html (%d bytes)', Buffer.byteLength(html));
 }
 
