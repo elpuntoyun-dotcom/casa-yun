@@ -1,1 +1,51 @@
-IyBEZWNhcCBDTVMgY29uZmlndXJhdGlvbiBmb3IgQ2FzYSBZdW4KIyBEb2NzOiBodHRwczovL2RlY2FwY21zLm9yZy9kb2NzL2NvbmZpZ3VyYXRpb24tb3B0aW9ucy8KCmJhY2tlbmQ6CiAgbmFtZTogZ2l0aHViCiAgcmVwbzogZWxwdW50b3l1bi1kb3Rjb20vY2FzYS15dW4KICBicmFuY2g6IG1haW4KICAjIE9BdXRoIOeZu+W9lee9keWFszrnq5nlhoXnmoQgL2FwaS9hdXRoIOS4jiAvYXBpL2NhbGxiYWNrIChWZXJjZWwgc2VydmVybGVzcyBmdW5jdGlvbnMp44CCCiAgIyDphY3lkIjlnKggR2l0SHViIOazqOWGjOeahCBPQXV0aCBBcHAg5L2/55SoLENsaWVudCBJRC9TZWNyZXQg5pS+5ZyoIFZlcmNlbCDnjq/looPlj5jph4/ph4zjgIIKICBiYXNlX3VybDogaHR0cHM6Ly9jYXNheXVuLmNvbQogIGF1dGhfZW5kcG9pbnQ6IGFwaS9hdXRoCgojIOermeWGheWbvueJhzrmnoTlu7rovpPlh7rph4zlm77niYfmlL7lnKjnq5nngrnmoLnnm67lvZXnmoQgYXNzZXRzLyDkuIssCiMg5omA5Lul57yW6L6R5Zmo6YeM6YCJ5Zu+5ZCO5YaZ5YWl55qE6Lev5b6E5bCx5pivIGFzc2V0cy94eHguanBnKOS4jueOsOacieW8leeUqOS4gOiHtCnjgIIKbWVkaWFfZm9sZGVyOiAiYXNzZXRzIgpwdWJsaWNfZm9sZGVyOiAiYXNzZXRzIgoKY29sbGVjdGlvbnM6CiAgLSBuYW1lOiAicG9zdHMiCiAgICBsYWJlbDogIuWNmuWuouaWh+eroCIKICAgIGxhYmVsX3Npbmd1bGFyOiAi5paH56ugIgogICAgZGVzY3JpcHRpb246ICJDYXNhIFl1biDljZrlrqLmlofnq6DjgILmlofku7blkI3lm7rlrprkuLogPHNsdWc+LjxsYW5nPi5tZCzlhbHlha3np43or63oqIDlkITkuIDnr4fjgIIiCiAgICBmb2xkZXI6ICJjb250ZW50L3Bvc3RzIgogICAgY3JlYXRlOiB0cnVlCiAgICAjIOaWh+S7tuWQjeaooeadvzpzbHVnIOWtl+autSArIGxhbmcg5a2X5q61LOS+i+WmgiBwcGstb2xkLWFnZS56aC5tZAogICAgc2x1ZzogInt7c2x1Z319Lnt7bGFuZ319IgogICAgZXh0ZW5zaW9uOiAibWQiCiAgICBmb3JtYXQ6ICJmcm9udG1hdHRlciIKICAgIGVkaXRvcjoKICAgICAgcHJldmlldzogZmFsc2UKICAgIGZpZWxkczoKICAgICAgLSB7IGxhYmVsOiAi5qCH6aKYIiwgbmFtZTogInRpdGxlIiwgd2lkZ2V0OiAic3RyaW5nIiB9CiAgICAgIC0geyBsYWJlbDogIlNsdWco572R5Z2A5Luj5Y+3LOiLseaWh+Wwj+WGmSkiLCBuYW1lOiAic2x1ZyIsIHdpZGdldDogInN0cmluZyIsIGhpbnQ6ICLkvovlpoIgcHBrLW9sZC1hZ2Us5Yaz5a6a5paH5Lu25ZCNIiB9CiAgICAgIC0geyBsYWJlbDogIuivreiogCIsIG5hbWU6ICJsYW5nIiwgd2lkZ2V0OiAic2VsZWN0IiwKICAgICAgICAgIG9wdGlvbnM6IFsiZW4iLCAiemgiLCAiemhIYW5zIiwgImVzIiwgInB0IiwgImphIl0sCiAgICAgICAgICBoaW50OiAiZW496Iux5paHIHpoPee5geS4rSB6aEhhbnM9566A5LitIGVzPeilv+ivrSBwdD3okaHor60gamE95pel6K+tIiB9CiAgICAgIC0geyBsYWJlbDogIuWPkeW4g+aXpeacnyIsIG5hbWU6ICJkYXRlIiwgd2lkZ2V0OiAiZGF0ZXRpbWUiLCBmb3JtYXQ6ICJZWVlZLU1NLUREIiB9CiAgICAgIC0geyBsYWJlbDogIuagj+ebruagh+etviIsIG5hbWU6ICJjYXRlZ29yeSIsIHdpZGdldDogInN0cmluZyIgfQogICAgICAtIHsgbGFiZWw6ICLmkZjopoEo6aaW6aG15Y2h54mH55SoKSIsIG5hbWU6ICJleGNlcnB0Iiwgd2lkZ2V0OiAidGV4dCIgfQogICAgICAtIHsgbGFiZWw6ICLov5Tlm57pk77mjqXmloflrZciLCBuYW1lOiAiYmFja19sYWJlbCIsIHdpZGdldDogInN0cmluZyIgfQogICAgICAtIHsgbGFiZWw6ICLmmL7npLrml6XmnJ8o5ZCE6K+t6KiA5YaZ5rOVKSIsIG5hbWU6ICJkYXRlX2Rpc3BsYXkiLCB3aWRnZXQ6ICJzdHJpbmciLAogICAgICAgICAgaGludDogIuS+i+WmgiAyMDI25bm0MTDmnIg05pelIC8gT2N0b2JlciA0LCAyMDI2IiB9CiAgICAgIC0geyBsYWJlbDogIumYheivu+WFqOaWh+aMiemSruaWh+WtlyIsIG5hbWU6ICJyZWFkX2xhYmVsIiwgd2lkZ2V0OiAic3RyaW5nIiB9CiAgICAgIC0geyBsYWJlbDogIumimOWbviIsIG5hbWU6ICJoZXJvX2ltYWdlIiwgd2lkZ2V0OiAiaW1hZ2UiLCByZXF1aXJlZDogZmFsc2UgfQogICAgICAtIHsgbGFiZWw6ICLpopjlm74gYWx0IOivtOaYjiIsIG5hbWU6ICJoZXJvX2FsdCIsIHdpZGdldDogInN0cmluZyIsIHJlcXVpcmVkOiBmYWxzZSB9CiAgICAgIC0geyBsYWJlbDogIuaOqOiNkOW+veaghyjku4Uga2VmaXIg6aaW6aG15aSn5Y2h55SoKSIsIG5hbWU6ICJzcG90bGlnaHRfYmFkZ2UiLCB3aWRnZXQ6ICJzdHJpbmciLCByZXF1aXJlZDogZmFsc2UgfQogICAgICAtIHsgbGFiZWw6ICLpppbpobXljaHniYfmoI/nm67moIfnrb4iLCBuYW1lOiAiZmVhdHVyZWRfbGFiZWwiLCB3aWRnZXQ6ICJzdHJpbmciIH0KICAgICAgLSB7IGxhYmVsOiAi5qCP55uu5YiX6KGo5p2h55uuKOS7hSBwcGsg55SoKSIsIG5hbWU6ICJjaGFwdGVyX2xpc3RpbmciLCB3aWRnZXQ6ICJzdHJpbmciLCByZXF1aXJlZDogZmFsc2UgfQogICAgICAtIHsgbGFiZWw6ICLmoI/nm67or6bmg4XpmIXor7vpk77mjqXmloflrZciLCBuYW1lOiAiYXJ0aWNsZV9yZWFkIiwgd2lkZ2V0OiAic3RyaW5nIiB9CiAgICAgIC0geyBsYWJlbDogIuaWh+WGhemFjeWbviBhbHQo5LuFIHBwayDnrKzkuozlvKDlm77nlKgpIiwgbmFtZTogInBob3RvX2FsdF8xIiwgd2lkZ2V0OiAic3RyaW5nIiwgcmVxdWlyZWQ6IGZhbHNlIH0KICAgICAgLSB7IGxhYmVsOiAi5q2j5paHIiwgbmFtZTogImJvZHkiLCB3aWRnZXQ6ICJtYXJrZG93biIsIGhpbnQ6ICLmrrXokL3nm7TmjqXlhpk75bCP5qCH6aKY55SoICMjIDvphY3lm77nlKjlm77niYfmjInpkq7mj5LlhaUoYWx0IOaWh+Wtl+S8muWQjOaXtuS9nOS4uuWbvuazqCkiIH0K
+# Decap CMS configuration for Casa Yun
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: github
+  repo: elpuntoyun-dotcom/casa-yun
+  branch: main
+  # OAuth 登录网关:站内的 /api/auth 与 /api/callback (Vercel serverless functions)。
+  # 配合在 GitHub 注册的 OAuth App 使用,Client ID/Secret 放在 Vercel 环境变量里。
+  base_url: https://casayun.com
+  auth_endpoint: api/auth
+
+# 站内图片:构建输出里图片放在站点根目录的 assets/ 下,
+# 所以编辑器里选图后写入的路径就是 assets/xxx.jpg(与现有引用一致)。
+media_folder: "assets"
+public_folder: "assets"
+
+collections:
+  - name: "posts"
+    label: "博客文章"
+    label_singular: "文章"
+    description: "Casa Yun 博客文章。文件名固定为 <slug>.<lang>.md,共六种语言各一篇。"
+    folder: "content/posts"
+    create: true
+    # 文件名模板:slug 字段 + lang 字段,例如 ppk-old-age.zh.md
+    slug: "{{slug}}.{{lang}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "Slug(网址代号,英文小写)", name: "slug", widget: "string", hint: "例如 ppk-old-age,决定文件名" }
+      - { label: "语言", name: "lang", widget: "select",
+          options: ["en", "zh", "zhHans", "es", "pt", "ja"],
+          hint: "en=英文 zh=繁中 zhHans=简中 es=西语 pt=葡语 ja=日语" }
+      - { label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "栏目标签", name: "category", widget: "string" }
+      - { label: "摘要(首页卡片用)", name: "excerpt", widget: "text" }
+      - { label: "返回链接文字", name: "back_label", widget: "string" }
+      - { label: "显示日期(各语言写法)", name: "date_display", widget: "string",
+          hint: "例如 2026年10月4日 / October 4, 2026" }
+      - { label: "阅读全文按钮文字", name: "read_label", widget: "string" }
+      - { label: "题图", name: "hero_image", widget: "image", required: false }
+      - { label: "题图 alt 说明", name: "hero_alt", widget: "string", required: false }
+      - { label: "推荐徽标(仅 kefir 首页大卡用)", name: "spotlight_badge", widget: "string", required: false }
+      - { label: "首页卡片栏目标签", name: "featured_label", widget: "string" }
+      - { label: "栏目列表条目(仅 ppk 用)", name: "chapter_listing", widget: "string", required: false }
+      - { label: "栏目详情阅读链接文字", name: "article_read", widget: "string" }
+      - { label: "文内配图 alt(仅 ppk 第二张图用)", name: "photo_alt_1", widget: "string", required: false }
+      - { label: "正文", name: "body", widget: "markdown", hint: "段落直接写;小标题用 ## ;配图用图片按钮插入(alt 文字会同时作为图注)" }
