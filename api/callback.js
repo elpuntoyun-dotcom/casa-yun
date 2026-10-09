@@ -1,1 +1,73 @@
-Ly8gRGVjYXAgQ01TIEdpdEh1YiBPQXV0aCDlm57osIMuCi8vIEdpdEh1YiDmjojmnYPlkI7luKYgP2NvZGU9Li4uJnN0YXRlPS4uLiDot7Plm57ov5nph4w7Ci8vIOi/memHjOeUqCBjbGllbnRfc2VjcmV0IOWQkSBHaXRIdWIg5o2iIGFjY2Vzc190b2tlbiwKLy8g5YaN5oyJIERlY2FwIOe6puWumueahCBwb3N0TWVzc2FnZSDmoLzlvI/mioogdG9rZW4g5Lqk57uZIC9hZG1pbiDpobXpnaLjgIIKLy8gY2xpZW50X3NlY3JldCDlj6rmtLvlnKjmnI3liqHnq6/njq/looPlj5jph4/ph4ws57ud5LiN6L+b5rWP6KeI5Zmo44CCCgpleHBvcnQgZGVmYXVsdCBhc3luYyBmdW5jdGlvbiBoYW5kbGVyKHJlcSwgcmVzKSB7CiAgY29uc3QgZmFpbCA9IChtc2cpID0+IHsKICAgIHJlcy5zZXRIZWFkZXIoJ0NvbnRlbnQtVHlwZScsICd0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgnKTsKICAgIHJlcy5zZW5kKGA8IWRvY3R5cGUgaHRtbD48aHRtbD48Ym9keT48c2NyaXB0PgogICAgICAoZnVuY3Rpb24gKCkgewogICAgICAgIHZhciBwYXlsb2FkID0gJ2F1dGhvcml6YXRpb246Z2l0aHViOmVycm9yOicgKyAke0pTT04uc3RyaW5naWZ5KAogICAgICAgICAgSlNPTi5zdHJpbmdpZnkoeyBtZXNzYWdlOiBTdHJpbmcobXNnKSB9KQogICAgICAgICl9OwogICAgICAgIGlmICh3aW5kb3cub3BlbmVyKSB7IHdpbmRvdy5vcGVuZXIucG9zdE1lc3NhZ2UocGF5bG9hZCwgJyonKTsgfQogICAgICB9KSgpOwogICAgPC9zY3JpcHQ+PHA+R2l0SHViIOeZu+W9leWksei0pToke1N0cmluZyhtc2cpLnJlcGxhY2UoLzwvZywgJyZsdDsnKX08L3A+PC9ib2R5PjwvaHRtbD5gKTsKICB9OwoKICB0cnkgewogICAgY29uc3QgeyBjb2RlLCBzdGF0ZSB9ID0gcmVxLnF1ZXJ5IHx8IHt9OwogICAgY29uc3QgY29va2llID0gcmVxLmhlYWRlcnMuY29va2llIHx8ICcnOwogICAgY29uc3QgbSA9IGNvb2tpZS5tYXRjaCgvZGVjYXBfb2F1dGhfc3RhdGU9KFteO10rKS8pOwogICAgaWYgKCFjb2RlIHx8ICFzdGF0ZSB8fCAhbSB8fCBtWzFdICE9PSBzdGF0ZSkgewogICAgICBmYWlsKCdJbnZhbGlkIE9BdXRoIHN0YXRlLCBwbGVhc2UgdHJ5IGxvZ2dpbmcgaW4gYWdhaW4uJyk7CiAgICAgIHJldHVybjsKICAgIH0KICAgIC8vIHN0YXRlIOS4gOasoeaAp+acieaViCznq4vljbPmuIXpmaQuCiAgICByZXMuc2V0SGVhZGVyKAogICAgICAnU2V0LUNvb2tpZScsCiAgICAgICdkZWNhcF9vYXV0aF9zdGF0ZT1kZWxldGVkOyBQYXRoPS87IEh0dHBPbmx5OyBTZWN1cmU7IFNhbWVTaXRlPUxheDsgTWF4LUFnZT0wJwogICAgKTsKCiAgICBjb25zdCBob3N0ID0gcmVxLmhlYWRlcnNbJ3gtZm9yd2FyZGVkLWhvc3QnXSB8fCByZXEuaGVhZGVycy5ob3N0OwogICAgY29uc3QgY2FsbGJhY2tVcmwgPSBgaHR0cHM6Ly8ke2hvc3R9L2FwaS9jYWxsYmFja2A7CiAgICBjb25zdCB0b2tlblJlcyA9IGF3YWl0IGZldGNoKAogICAgICAnaHR0cHM6Ly9naXRodWIuY29tL2xvZ2luL29hdXRoL2FjY2Vzc190b2tlbicsCiAgICAgIHsKICAgICAgICBtZXRob2Q6ICdQT1NUJywKICAgICAgICBoZWFkZXJzOiB7CiAgICAgICAgICAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nLAogICAgICAgICAgQWNjZXB0OiAnYXBwbGljYXRpb24vanNvbicsCiAgICAgICAgfSwKICAgICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgICBjbGllbnRfaWQ6IHByb2Nlc3MuZW52LkdJVEhVQl9DTElFTlRfSUQsCiAgICAgICAgICBjbGllbnRfc2VjcmV0OiBwcm9jZXNzLmVudi5HSVRIVUJfQ0xJRU5UX1NFQ1JFVCwKICAgICAgICAgIGNvZGUsCiAgICAgICAgICByZWRpcmVjdF91cmk6IGNhbGxiYWNrVXJsLAogICAgICAgIH0pLAogICAgICB9CiAgICApOwogICAgY29uc3QgZGF0YSA9IGF3YWl0IHRva2VuUmVzLmpzb24oKTsKICAgIGlmICghZGF0YS5hY2Nlc3NfdG9rZW4pIHsKICAgICAgZmFpbChkYXRhLmVycm9yX2Rlc2NyaXB0aW9uIHx8IGRhdGEuZXJyb3IgfHwgJ0NvdWxkIG5vdCBvYnRhaW4gYWNjZXNzIHRva2VuLicpOwogICAgICByZXR1cm47CiAgICB9CgogICAgY29uc3QgcGF5bG9hZCA9IEpTT04uc3RyaW5naWZ5KHsKICAgICAgdG9rZW46IGRhdGEuYWNjZXNzX3Rva2VuLAogICAgICBwcm92aWRlcjogJ2dpdGh1YicsCiAgICB9KTsKICAgIHJlcy5zZXRIZWFkZXIoJ0NvbnRlbnQtVHlwZScsICd0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgnKTsKICAgIHJlcy5zZW5kKGA8IWRvY3R5cGUgaHRtbD48aHRtbD48Ym9keT48c2NyaXB0PgogICAgICAoZnVuY3Rpb24gKCkgewogICAgICAgIHZhciBtc2cgPSAnYXV0aG9yaXphdGlvbjpnaXRodWI6c3VjY2VzczonICsgJHtKU09OLnN0cmluZ2lmeShwYXlsb2FkKX07CiAgICAgICAgaWYgKHdpbmRvdy5vcGVuZXIpIHsgd2luZG93Lm9wZW5lci5wb3N0TWVzc2FnZShtc2csICcqJyk7IH0KICAgICAgfSkoKTsKICAgIDwvc2NyaXB0PjxwPueZu+W9leaIkOWKnyznqpflj6PkvJroh6rliqjlhbPpl63igKY8L3A+CiAgICA8c2NyaXB0PnNldFRpbWVvdXQoZnVuY3Rpb24oKXsgd2luZG93LmNsb3NlKCk7IH0sIDgwMCk7PC9zY3JpcHQ+PC9ib2R5PjwvaHRtbD5gKTsKICB9IGNhdGNoIChlKSB7CiAgICBmYWlsKCdVbmV4cGVjdGVkIGVycm9yIGR1cmluZyBsb2dpbi4nKTsKICB9Cn0K
+// Decap CMS GitHub OAuth 回调.
+// GitHub 授权后带 ?code=...&state=... 跳回这里;
+// 这里用 client_secret 向 GitHub 换 access_token,
+// 再按 Decap 约定的 postMessage 格式把 token 交给 /admin 页面。
+// client_secret 只活在服务端环境变量里,绝不进浏览器。
+
+export default async function handler(req, res) {
+  const fail = (msg) => {
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.send(`<!doctype html><html><body><script>
+      (function () {
+        var payload = 'authorization:github:error:' + ${JSON.stringify(
+          JSON.stringify({ message: String(msg) })
+        )};
+        if (window.opener) { window.opener.postMessage(payload, '*'); }
+      })();
+    </script><p>GitHub 登录失败:${String(msg).replace(/</g, '&lt;')}</p></body></html>`);
+  };
+
+  try {
+    const { code, state } = req.query || {};
+    const cookie = req.headers.cookie || '';
+    const m = cookie.match(/decap_oauth_state=([^;]+)/);
+    if (!code || !state || !m || m[1] !== state) {
+      fail('Invalid OAuth state, please try logging in again.');
+      return;
+    }
+    // state 一次性有效,立即清除.
+    res.setHeader(
+      'Set-Cookie',
+      'decap_oauth_state=deleted; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0'
+    );
+
+    const host = req.headers['x-forwarded-host'] || req.headers.host;
+    const callbackUrl = `https://${host}/api/callback`;
+    const tokenRes = await fetch(
+      'https://github.com/login/oauth/access_token',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          client_id: process.env.GITHUB_CLIENT_ID,
+          client_secret: process.env.GITHUB_CLIENT_SECRET,
+          code,
+          redirect_uri: callbackUrl,
+        }),
+      }
+    );
+    const data = await tokenRes.json();
+    if (!data.access_token) {
+      fail(data.error_description || data.error || 'Could not obtain access token.');
+      return;
+    }
+
+    const payload = JSON.stringify({
+      token: data.access_token,
+      provider: 'github',
+    });
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.send(`<!doctype html><html><body><script>
+      (function () {
+        var msg = 'authorization:github:success:' + ${JSON.stringify(payload)};
+        if (window.opener) { window.opener.postMessage(msg, '*'); }
+      })();
+    </script><p>登录成功,窗口会自动关闭…</p>
+    <script>setTimeout(function(){ window.close(); }, 800);</script></body></html>`);
+  } catch (e) {
+    fail('Unexpected error during login.');
+  }
+}

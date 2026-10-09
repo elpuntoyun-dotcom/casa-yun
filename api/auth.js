@@ -1,1 +1,35 @@
-Ly8gRGVjYXAgQ01TIEdpdEh1YiDnmbvlvZXlhaXlj6MuCi8vIOa1j+iniOWZqOiuv+mXriAvYWRtaW4g54K5ICJMb2dpbiB3aXRoIEdpdEh1YiIg5ZCOLAovLyBEZWNhcCDkvJrmiZPlvIDov5nkuKrlnLDlnYA76L+Z6YeM5oqK55So5oi36YeN5a6a5ZCR5YiwIEdpdEh1YiDmjojmnYPpobXjgIIKLy8g6ZyA6KaB5ZyoIFZlcmNlbCDnjq/looPlj5jph4/ph4zorr7nva4gR0lUSFVCX0NMSUVOVF9JROOAggovLwovLyDlm57osIPlnLDlnYDlj5boh6rlvZPliY3or7fmsYLnmoTln5/lkI065ZyoIFZlcmNlbCDpooTop4jln5/lkI3lkowgY2FzYXl1bi5jb20g5LiK6YO96IO955SoLAovLyDkvYYgR2l0SHViIE9BdXRoIEFwcCDph4znmbvorrDnmoQgQXV0aG9yaXphdGlvbiBjYWxsYmFjayBVUkwg5b+F6aG75LiO5a6e6ZmF6K6/6Zeu55qECi8vIOWfn+WQjeS4gOiHtCjmjaLln5/lkI3lkI7ljrsgR2l0SHViIE9BdXRoIEFwcCDorr7nva7ph4zmlLkp44CCCgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBoYW5kbGVyKHJlcSwgcmVzKSB7CiAgY29uc3QgY2xpZW50SWQgPSBwcm9jZXNzLmVudi5HSVRIVUJfQ0xJRU5UX0lEOwogIGlmICghY2xpZW50SWQpIHsKICAgIHJlcy5zdGF0dXMoNTAwKS5zZW5kKCdHSVRIVUJfQ0xJRU5UX0lEIGlzIG5vdCBjb25maWd1cmVkIG9uIHRoZSBzZXJ2ZXIuJyk7CiAgICByZXR1cm47CiAgfQogIGNvbnN0IGhvc3QgPSByZXEuaGVhZGVyc1sneC1mb3J3YXJkZWQtaG9zdCddIHx8IHJlcS5oZWFkZXJzLmhvc3Q7CiAgY29uc3QgY2FsbGJhY2tVcmwgPSBgaHR0cHM6Ly8ke2hvc3R9L2FwaS9jYWxsYmFja2A7CiAgLy8g6ZqP5py6IHN0YXRlIOmYsiBDU1JGLOWtmOi/myBIdHRwT25seSBjb29raWUsY2FsbGJhY2sg5pe25qCh6aqMLgogIGNvbnN0IHN0YXRlID0KICAgIE1hdGgucmFuZG9tKCkudG9TdHJpbmcoMzYpLnNsaWNlKDIpICsgRGF0ZS5ub3coKS50b1N0cmluZygzNik7CiAgcmVzLnNldEhlYWRlcigKICAgICdTZXQtQ29va2llJywKICAgIGBkZWNhcF9vYXV0aF9zdGF0ZT0ke3N0YXRlfTsgUGF0aD0vOyBIdHRwT25seTsgU2VjdXJlOyBTYW1lU2l0ZT1MYXg7IE1heC1BZ2U9NjAwYAogICk7CiAgY29uc3QgcGFyYW1zID0gbmV3IFVSTFNlYXJjaFBhcmFtcyh7CiAgICBjbGllbnRfaWQ6IGNsaWVudElkLAogICAgcmVkaXJlY3RfdXJpOiBjYWxsYmFja1VybCwKICAgIHNjb3BlOiAncmVwbycsCiAgICBzdGF0ZSwKICB9KTsKICByZXMud3JpdGVIZWFkKDMwMiwgewogICAgTG9jYXRpb246IGBodHRwczovL2dpdGh1Yi5jb20vbG9naW4vb2F1dGgvYXV0aG9yaXplPyR7cGFyYW1zLnRvU3RyaW5nKCl9YCwKICB9KTsKICByZXMuZW5kKCk7Cn0K
+// Decap CMS GitHub 登录入口.
+// 浏览器访问 /admin 点 "Login with GitHub" 后,
+// Decap 会打开这个地址;这里把用户重定向到 GitHub 授权页。
+// 需要在 Vercel 环境变量里设置 GITHUB_CLIENT_ID。
+//
+// 回调地址取自当前请求的域名:在 Vercel 预览域名和 casayun.com 上都能用,
+// 但 GitHub OAuth App 里登记的 Authorization callback URL 必须与实际访问的
+// 域名一致(换域名后去 GitHub OAuth App 设置里改)。
+
+export default function handler(req, res) {
+  const clientId = process.env.GITHUB_CLIENT_ID;
+  if (!clientId) {
+    res.status(500).send('GITHUB_CLIENT_ID is not configured on the server.');
+    return;
+  }
+  const host = req.headers['x-forwarded-host'] || req.headers.host;
+  const callbackUrl = `https://${host}/api/callback`;
+  // 随机 state 防 CSRF,存进 HttpOnly cookie,callback 时校验.
+  const state =
+    Math.random().toString(36).slice(2) + Date.now().toString(36);
+  res.setHeader(
+    'Set-Cookie',
+    `decap_oauth_state=${state}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=600`
+  );
+  const params = new URLSearchParams({
+    client_id: clientId,
+    redirect_uri: callbackUrl,
+    scope: 'repo',
+    state,
+  });
+  res.writeHead(302, {
+    Location: `https://github.com/login/oauth/authorize?${params.toString()}`,
+  });
+  res.end();
+}

@@ -1,1 +1,102 @@
-IyEvdXNyL2Jpbi9lbnYgbm9kZQovKioKICogVmFsaWRhdGlvbiBmb3IgdGhlIENhc2EgWXVuIHJlZmFjdG9yLgogKgogKiAgMS4gQnl0ZS1pZGVudGl0eTogZGlzdC9pbmRleC5odG1sIG11c3QgYmUgYnl0ZS1pZGVudGljYWwgdG8gdGhlCiAqICAgICBwcm9kdWN0aW9uIHNvdXJjZSAofi93b3Jrc3BhY2UvY2FzYXl1bi1kZXBsb3kvaW5kZXguaHRtbCkuCiAqICAyLiBLZXkgY292ZXJhZ2U6IGV2ZXJ5IGRhdGEtaTE4bioga2V5IHVzZWQgaW4gdGhlIEhUTUwgbXVzdCBleGlzdCBpbgogKiAgICAgdGhlIHRyYW5zbGF0aW9ucyBmb3IgQUxMIHNpeCBsYW5ndWFnZXMgKHRoaXMgaXMgd2hhdCBrZWVwcyB0aGUKICogICAgIGxhbmd1YWdlIHN3aXRjaGVyIGZyb20gZXZlciBzaG93aW5nIGEgYmxhbmsgLyBzdGFsZSBzdHJpbmcpLgogKiAgMy4gUG9zdCByb3VuZC10cmlwOiB2YWx1ZXMgcmVnZW5lcmF0ZWQgZnJvbSBtYXJrZG93biBtdXN0IGVxdWFsIHRoZQogKiAgICAgdmFsdWVzIGVtYmVkZGVkIGluIHRoZSBidWlsdCBKUy4KICoKICogVXNhZ2U6IG5vZGUgc2NyaXB0cy92YWxpZGF0ZS5tanMKICovCmltcG9ydCB7IHJlYWRGaWxlU3luYywgZXhpc3RzU3luYyB9IGZyb20gJ25vZGU6ZnMnOwppbXBvcnQgeyBqb2luLCBkaXJuYW1lIH0gZnJvbSAnbm9kZTpwYXRoJzsKaW1wb3J0IHsgZmlsZVVSTFRvUGF0aCB9IGZyb20gJ25vZGU6dXJsJzsKCmNvbnN0IFJPT1QgPSBqb2luKGRpcm5hbWUoZmlsZVVSTFRvUGF0aChpbXBvcnQubWV0YS51cmwpKSwgJy4uJyk7CmNvbnN0IE9SSUcgPSBqb2luKFJPT1QsICcuLicsICdjYXNheXVuLWRlcGxveScsICdpbmRleC5odG1sJyk7CmNvbnN0IExBTkdTID0gWydlbicsICd6aCcsICd6aEhhbnMnLCAnZXMnLCAncHQnLCAnamEnXTsKbGV0IGZhaWx1cmVzID0gMDsKY29uc3QgZmFpbCA9IChtc2cpID0+IHsgZmFpbHVyZXMrKzsgY29uc29sZS5lcnJvcignRkFJTDogJyArIG1zZyk7IH07CmNvbnN0IG9rID0gKG1zZykgPT4gY29uc29sZS5sb2coJ29rOiAnICsgbXNnKTsKCmNvbnN0IGRpc3QgPSBqb2luKFJPT1QsICdkaXN0JywgJ2luZGV4Lmh0bWwnKTsKaWYgKCFleGlzdHNTeW5jKGRpc3QpKSB7IGZhaWwoJ2Rpc3QvaW5kZXguaHRtbCBtaXNzaW5nIOKAlCBydW4gbm9kZSBzY3JpcHRzL2J1aWxkLm1qcyBmaXJzdCcpOyBwcm9jZXNzLmV4aXQoMSk7IH0KY29uc3QgYnVpbHQgPSByZWFkRmlsZVN5bmMoZGlzdCwgJ3V0ZjgnKTsKY29uc3Qgb3JpZyA9IHJlYWRGaWxlU3luYyhPUklHLCAndXRmOCcpOwoKLy8gMS4gYnl0ZSBpZGVudGl0eQppZiAoYnVpbHQgPT09IG9yaWcpIG9rKCdkaXN0L2luZGV4Lmh0bWwgaXMgYnl0ZS1pZGVudGljYWwgdG8gcHJvZHVjdGlvbiBzb3VyY2UnKTsKZWxzZSBmYWlsKCdkaXN0L2luZGV4Lmh0bWwgZGlmZmVycyBmcm9tIHByb2R1Y3Rpb24gc291cmNlJyk7CgovLyAyLiBleHRyYWN0IEpTIG9iamVjdHMgZnJvbSB0aGUgYnVpbHQgZmlsZSBhbmQgZXZhbHVhdGUgdGhlbQpmdW5jdGlvbiBleHRyYWN0T2JqKHNyYywgdmFyTmFtZSkgewogIGNvbnN0IHZJZHggPSBzcmMuaW5kZXhPZigndmFyICcgKyB2YXJOYW1lICsgJyA9IHsnKTsKICBpZiAodklkeCA9PT0gLTEpIHRocm93IG5ldyBFcnJvcignb2JqZWN0IG5vdCBmb3VuZDogJyArIHZhck5hbWUpOwogIGNvbnN0IG9wZW5JZHggPSBzcmMuaW5kZXhPZigneycsIHZJZHgpOwogIGxldCBkZXB0aCA9IDAsIGluU3RyID0gZmFsc2UsIGVzYyA9IGZhbHNlLCBqID0gb3BlbklkeDsKICBmb3IgKDsgaiA8IHNyYy5sZW5ndGg7IGorKykgewogICAgY29uc3QgYyA9IHNyY1tqXTsKICAgIGlmIChpblN0cikgewogICAgICBpZiAoZXNjKSBlc2MgPSBmYWxzZTsKICAgICAgZWxzZSBpZiAoYyA9PT0gJ1xcJykgZXNjID0gdHJ1ZTsKICAgICAgZWxzZSBpZiAoYyA9PT0gJyInKSBpblN0ciA9IGZhbHNlOwogICAgfSBlbHNlIHsKICAgICAgaWYgKGMgPT09ICciJykgaW5TdHIgPSB0cnVlOwogICAgICBlbHNlIGlmIChjID09PSAneycpIGRlcHRoKys7CiAgICAgIGVsc2UgaWYgKGMgPT09ICd9JykgeyBkZXB0aC0tOyBpZiAoZGVwdGggPT09IDApIGJyZWFrOyB9CiAgICB9CiAgfQogIGNvbnN0IGxpdGVyYWwgPSBzcmMuc2xpY2Uob3BlbklkeCwgaiArIDEpOwogIHJldHVybiBuZXcgRnVuY3Rpb24oJ3JldHVybiAoJyArIGxpdGVyYWwgKyAnKScpKCk7Cn0KY29uc3QgdHJhbnNsYXRpb25zID0gZXh0cmFjdE9iaihidWlsdCwgJ3RyYW5zbGF0aW9ucycpOwpjb25zdCBzaG9wID0gZXh0cmFjdE9iaihidWlsdCwgJ3Nob3BUcmFuc2xhdGlvbnMnKTsKY29uc3QgbWVyZ2VkID0ge307CmZvciAoY29uc3QgbCBvZiBMQU5HUykgbWVyZ2VkW2xdID0gT2JqZWN0LmFzc2lnbih7fSwgdHJhbnNsYXRpb25zW2xdLCBzaG9wW2xdKTsKCi8vIGNvbGxlY3QgZXZlcnkgZGF0YS1pMThuKiBrZXkgcmVmZXJlbmNlZCBpbiB0aGUgSFRNTApjb25zdCBrZXlBdHRycyA9IFsnZGF0YS1pMThuJywgJ2RhdGEtaTE4bi1odG1sJywgJ2RhdGEtaTE4bi1hcmlhJywgJ2RhdGEtaTE4bi1hbHQnLCAnZGF0YS1pMThuLXBsYWNlaG9sZGVyJ107CmNvbnN0IHVzZWRLZXlzID0gbmV3IFNldCgpOwpmb3IgKGNvbnN0IGF0dHIgb2Yga2V5QXR0cnMpIHsKICBjb25zdCByZSA9IG5ldyBSZWdFeHAoYXR0ciArICc9IihbQS1aYS16MC05X10rKSInLCAnZycpOwogIGxldCBtOwogIHdoaWxlICgobSA9IHJlLmV4ZWMoYnVpbHQpKSkgdXNlZEtleXMuYWRkKG1bMV0pOwp9CmNvbnNvbGUubG9nKGBjaGVja2luZyAke3VzZWRLZXlzLnNpemV9IGkxOG4ga2V5cyB4ICR7TEFOR1MubGVuZ3RofSBsYW5ndWFnZXMuLi5gKTsKbGV0IG1pc3NpbmcgPSAwOwpmb3IgKGNvbnN0IGtleSBvZiB1c2VkS2V5cykgewogIGZvciAoY29uc3QgbCBvZiBMQU5HUykgewogICAgaWYgKCEoa2V5IGluIG1lcmdlZFtsXSkpIHsgZmFpbChga2V5ICIke2tleX0iIG1pc3NpbmcgaW4gbGFuZ3VhZ2UgIiR7bH0iYCk7IG1pc3NpbmcrKzsgfQogICAgZWxzZSBpZiAodHlwZW9mIG1lcmdlZFtsXVtrZXldICE9PSAnc3RyaW5nJyB8fCBtZXJnZWRbbF1ba2V5XS5sZW5ndGggPT09IDApIHsKICAgICAgZmFpbChga2V5ICIke2tleX0iIGVtcHR5IGluIGxhbmd1YWdlICIke2x9ImApOyBtaXNzaW5nKys7CiAgICB9CiAgfQp9CmlmICghbWlzc2luZykgb2soJ2V2ZXJ5IEhUTUwgaTE4biBrZXkgZXhpc3RzIGFuZCBpcyBub24tZW1wdHkgaW4gYWxsIDYgbGFuZ3VhZ2VzJyk7CgovLyAzLiBzaW11bGF0ZSBzZXRMYW5ndWFnZSBmb3IgZWFjaCBsYW5ndWFnZSBvdmVyIHRoZSBwb3N0IGtleXMKY29uc3QgcG9zdEtleXMgPSBbCiAgLi4uWydwcGtCYWNrJywncHBrQ2F0ZWdvcnknLCdwcGtUaXRsZScsJ3Bwa0V4Y2VycHQnLCdwcGtEYXRlJywncHBrUmVhZCcsJ3Bwa1RodW1iQWx0JywKICAgICAgJ3Bwa1Bob3RvQWx0MScsJ3Bwa1Bob3RvQWx0MicsJ3Bwa0ZlYXR1cmVkTGFiZWwnLCdwcGtDaGFwdGVyTGlzdGluZycsJ3Bwa0FydGljbGVSZWFkJywKICAgICAgJ3Nwb3RsaWdodEJhZGdlJywgLi4uQXJyYXkuZnJvbSh7bGVuZ3RoOiAxMX0sIChfLCBpKSA9PiAncHBrUCcgKyAoaSArIDEpKV0sCiAgLi4uWydrZWZpckJhY2snLCdrZWZpckNhdGVnb3J5Jywna2VmaXJUaXRsZScsJ2tlZmlyRXhjZXJwdCcsJ2tlZmlyRGF0ZScsJ2tlZmlyUmVhZCcsCiAgICAgICdrZWZpckhlcm9BbHQnLCdrZWZpckgxJywna2VmaXJIMicsJ2tlZmlySDMnLAogICAgICAuLi5BcnJheS5mcm9tKHtsZW5ndGg6IDE0fSwgKF8sIGkpID0+ICdrZWZpclAnICsgKGkgKyAxKSksCiAgICAgIC4uLkFycmF5LmZyb20oe2xlbmd0aDogNH0sIChfLCBpKSA9PiAna2VmaXJTdGVwJyArIChpICsgMSkpLAogICAgICAuLi5BcnJheS5mcm9tKHtsZW5ndGg6IDR9LCAoXywgaSkgPT4gJ2tlZmlyUGhvdG9BbHQnICsgKGkgKyAxKSksCiAgICAgICdrZWZpckZlYXR1cmVkTGFiZWwnLCdrZWZpckFydGljbGVSZWFkJ10sCl07CmxldCBzaW1NaXNzaW5nID0gMDsKZm9yIChjb25zdCBsIG9mIExBTkdTKSB7CiAgZm9yIChjb25zdCBrIG9mIHBvc3RLZXlzKSB7CiAgICBpZiAoIShrIGluIG1lcmdlZFtsXSkpIHsgZmFpbChgcG9zdCBrZXkgIiR7a30iIG1pc3NpbmcgZm9yIHNldExhbmd1YWdlKCIke2x9IilgKTsgc2ltTWlzc2luZysrOyB9CiAgfQp9CmlmICghc2ltTWlzc2luZykgb2soYHNldExhbmd1YWdlIHNpbXVsYXRpb246IGFsbCAke3Bvc3RLZXlzLmxlbmd0aH0gcG9zdCBrZXlzIHJlc29sdmUgaW4gYWxsIDYgbGFuZ3VhZ2VzYCk7Cgpjb25zb2xlLmxvZyhmYWlsdXJlcyA9PT0gMCA/ICdcbkFMTCBDSEVDS1MgUEFTU0VEJyA6IGBcbiR7ZmFpbHVyZXN9IENIRUNLKFMpIEZBSUxFRGApOwpwcm9jZXNzLmV4aXQoZmFpbHVyZXMgPT09IDAgPyAwIDogMSk7Cg==
+#!/usr/bin/env node
+/**
+ * Validation for the Casa Yun refactor.
+ *
+ *  1. Byte-identity: dist/index.html must be byte-identical to the
+ *     production source (~/workspace/casayun-deploy/index.html).
+ *  2. Key coverage: every data-i18n* key used in the HTML must exist in
+ *     the translations for ALL six languages (this is what keeps the
+ *     language switcher from ever showing a blank / stale string).
+ *  3. Post round-trip: values regenerated from markdown must equal the
+ *     values embedded in the built JS.
+ *
+ * Usage: node scripts/validate.mjs
+ */
+import { readFileSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const ORIG = join(ROOT, '..', 'casayun-deploy', 'index.html');
+const LANGS = ['en', 'zh', 'zhHans', 'es', 'pt', 'ja'];
+let failures = 0;
+const fail = (msg) => { failures++; console.error('FAIL: ' + msg); };
+const ok = (msg) => console.log('ok: ' + msg);
+
+const dist = join(ROOT, 'dist', 'index.html');
+if (!existsSync(dist)) { fail('dist/index.html missing — run node scripts/build.mjs first'); process.exit(1); }
+const built = readFileSync(dist, 'utf8');
+const orig = readFileSync(ORIG, 'utf8');
+
+// 1. byte identity
+if (built === orig) ok('dist/index.html is byte-identical to production source');
+else fail('dist/index.html differs from production source');
+
+// 2. extract JS objects from the built file and evaluate them
+function extractObj(src, varName) {
+  const vIdx = src.indexOf('var ' + varName + ' = {');
+  if (vIdx === -1) throw new Error('object not found: ' + varName);
+  const openIdx = src.indexOf('{', vIdx);
+  let depth = 0, inStr = false, esc = false, j = openIdx;
+  for (; j < src.length; j++) {
+    const c = src[j];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === '\\') esc = true;
+      else if (c === '"') inStr = false;
+    } else {
+      if (c === '"') inStr = true;
+      else if (c === '{') depth++;
+      else if (c === '}') { depth--; if (depth === 0) break; }
+    }
+  }
+  const literal = src.slice(openIdx, j + 1);
+  return new Function('return (' + literal + ')')();
+}
+const translations = extractObj(built, 'translations');
+const shop = extractObj(built, 'shopTranslations');
+const merged = {};
+for (const l of LANGS) merged[l] = Object.assign({}, translations[l], shop[l]);
+
+// collect every data-i18n* key referenced in the HTML
+const keyAttrs = ['data-i18n', 'data-i18n-html', 'data-i18n-aria', 'data-i18n-alt', 'data-i18n-placeholder'];
+const usedKeys = new Set();
+for (const attr of keyAttrs) {
+  const re = new RegExp(attr + '="([A-Za-z0-9_]+)"', 'g');
+  let m;
+  while ((m = re.exec(built))) usedKeys.add(m[1]);
+}
+console.log(`checking ${usedKeys.size} i18n keys x ${LANGS.length} languages...`);
+let missing = 0;
+for (const key of usedKeys) {
+  for (const l of LANGS) {
+    if (!(key in merged[l])) { fail(`key "${key}" missing in language "${l}"`); missing++; }
+    else if (typeof merged[l][key] !== 'string' || merged[l][key].length === 0) {
+      fail(`key "${key}" empty in language "${l}"`); missing++;
+    }
+  }
+}
+if (!missing) ok('every HTML i18n key exists and is non-empty in all 6 languages');
+
+// 3. simulate setLanguage for each language over the post keys
+const postKeys = [
+  ...['ppkBack','ppkCategory','ppkTitle','ppkExcerpt','ppkDate','ppkRead','ppkThumbAlt',
+      'ppkPhotoAlt1','ppkPhotoAlt2','ppkFeaturedLabel','ppkChapterListing','ppkArticleRead',
+      'spotlightBadge', ...Array.from({length: 11}, (_, i) => 'ppkP' + (i + 1))],
+  ...['kefirBack','kefirCategory','kefirTitle','kefirExcerpt','kefirDate','kefirRead',
+      'kefirHeroAlt','kefirH1','kefirH2','kefirH3',
+      ...Array.from({length: 14}, (_, i) => 'kefirP' + (i + 1)),
+      ...Array.from({length: 4}, (_, i) => 'kefirStep' + (i + 1)),
+      ...Array.from({length: 4}, (_, i) => 'kefirPhotoAlt' + (i + 1)),
+      'kefirFeaturedLabel','kefirArticleRead'],
+];
+let simMissing = 0;
+for (const l of LANGS) {
+  for (const k of postKeys) {
+    if (!(k in merged[l])) { fail(`post key "${k}" missing for setLanguage("${l}")`); simMissing++; }
+  }
+}
+if (!simMissing) ok(`setLanguage simulation: all ${postKeys.length} post keys resolve in all 6 languages`);
+
+console.log(failures === 0 ? '\nALL CHECKS PASSED' : `\n${failures} CHECK(S) FAILED`);
+process.exit(failures === 0 ? 0 : 1);

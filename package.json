@@ -1,1 +1,1 @@
-eyJuYW1lIjoiY2FzYS15dW4tc291cmNlIiwicHJpdmF0ZSI6dHJ1ZSwic2NyaXB0cyI6eyJidWlsZCI6Im5vZGUgc2NyaXB0cy9idWlsZC5tanMiLCJ2YWxpZGF0ZSI6Im5vZGUgc2NyaXB0cy92YWxpZGF0ZS5tanMifSwidHlwZSI6Im1vZHVsZSJ9
+{"name":"casa-yun-source","private":true,"scripts":{"build":"node scripts/build.mjs","validate":"node scripts/validate.mjs"},"type":"module"}
