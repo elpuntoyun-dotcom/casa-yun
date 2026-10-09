@@ -7,7 +7,7 @@ backend:
   branch: main
   # OAuth 登录网关:站内的 /api/auth 与 /api/callback (Vercel serverless functions)。
   # 配合在 GitHub 注册的 OAuth App 使用,Client ID/Secret 放在 Vercel 环境变量里。
-  base_url: https://casayun.com
+  base_url: https://casa-yun-vcas.vercel.app
   auth_endpoint: api/auth
 
 # 站内图片:构建输出里图片放在站点根目录的 assets/ 下,
