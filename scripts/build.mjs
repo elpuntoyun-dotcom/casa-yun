@@ -54,6 +54,24 @@ const POSTS = {
       ['p', 'ppkP9'], ['p', 'ppkP10'], ['p', 'ppkP11'],
     ],
   },
+  'toward-the-goal': {
+    fm: { title: 'goalTitle', category: 'goalCategory', excerpt: 'goalExcerpt',
+          back_label: 'goalBack', date_display: 'goalDate', read_label: 'goalRead',
+          hero_alt: 'goalHeroAlt', photo_alt_1: 'goalPhotoAlt1',
+          featured_label: 'goalFeaturedLabel', article_read: 'goalArticleRead',
+          chapter_listing: 'goalChapterListing' },
+    blocks: [
+      ['p', 'goalP1'], ['p', 'goalP2'], ['p', 'goalP3'], ['p', 'goalP4'], ['p', 'goalP5'],
+      ['h2', 'goalH1'],
+      ['p', 'goalP6'], ['p', 'goalP7'],
+      ['h2', 'goalH2'],
+      ['p', 'goalP8'], ['p', 'goalP9'], ['p', 'goalP10'],
+      ['h2', 'goalH3'],
+      ['p', 'goalP11'], ['p', 'goalP12'], ['p', 'goalP13'],
+      ['figure', 'goalPhotoAlt1'],
+      ['p', 'goalP14'],
+    ],
+  },
   'kefir': {
     fm: { title: 'kefirTitle', category: 'kefirCategory', excerpt: 'kefirExcerpt',
           back_label: 'kefirBack', date_display: 'kefirDate', read_label: 'kefirRead',
@@ -249,9 +267,11 @@ function main() {
 
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
+    '<!--@CARD:toward-the-goal-->': 'card-toward-the-goal.html',
     '<!--@CARD:kefir-->': 'card-kefir.html',
     '<!--@CARD:ppk-->': 'card-ppk.html',
     '<!--@ARTICLE:ppk-->': 'article-ppk.html',
+    '<!--@ARTICLE:toward-the-goal-->': 'article-toward-the-goal.html',
     '<!--@ARTICLE:kefir-->': 'article-kefir.html',
   };
   for (const [ph, file] of Object.entries(partials)) {
@@ -283,8 +303,8 @@ function main() {
 
   // 3. Chapters-list straggler: hardcoded ppkChapterListing span (default zh).
   {
-    const zhListing = posts['ppk-old-age']['zh']['ppkChapterListing'];
-    const re = /(<span class="empty-note article-available" data-i18n="ppkChapterListing">)[^<]*(<\/span>)/;
+    const zhListing = posts['toward-the-goal']['zh']['goalChapterListing'];
+    const re = /(<span class="empty-note article-available" data-i18n="goalChapterListing">)[^<]*(<\/span>)/;
     if (!re.test(html)) throw new Error('ppkChapterListing span not found');
     html = html.replace(re, `$1${zhListing}$2`);
   }
@@ -305,6 +325,14 @@ function main() {
     for (const f of readdirSync(dir)) {
       const sp = join(dir, f);
       if (!statSync(sp).isFile()) continue;
+      // .webp.b64: base64-encoded image for text-only transports (e.g. CMS/API);
+      // decode to dist/assets/<name>.webp
+      if (f.toLowerCase().endsWith('.b64')) {
+        const outName = f.slice(0, -4);
+        if (!IMAGE_EXT.has(extname(outName).toLowerCase())) continue;
+        writeFileSync(join(distAssets, outName), Buffer.from(readFileSync(sp, 'utf8'), 'base64'));
+        continue;
+      }
       if (!IMAGE_EXT.has(extname(f).toLowerCase())) continue;
       cpSync(sp, join(distAssets, f));
     }
