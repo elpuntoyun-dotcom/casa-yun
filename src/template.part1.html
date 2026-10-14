@@ -1778,6 +1778,7 @@
         </div>
       </section>
       <section class="home-stories" aria-label="Latest stories">
+        <!--@CARD:away-from-the-house-->
         <!--@CARD:toward-the-goal-->
         <!--@CARD:kefir-->
         <!--@CARD:ppk-->
@@ -1841,3 +1842,244 @@
         <a class="chapter" href="#chapter-detail" data-category="chapterThree" data-i18n-aria="chapterThreeAria">
           <span class="num">03</span><h3 data-i18n="chapterThreeTitle">Keto &amp; Kitchen</h3>
           <p><span data-i18n="chapterThreeBody">Fermentation in the kitchen, the care of a good meal, and the pace of life the body teaches me.</span><span class="empty-note article-available"><span data-i18n="latestLabel">Latest</span> · <span data-i18n="mushroomTitle">Small but Mighty: The Mushroom, My Keto Superfood</span></span></p><span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="chapter" href="#chapter-detail" data-category="chapterFour" data-i18n-aria="chapterFourAria">
+          <span class="num">04</span><h3 data-i18n="chapterFourTitle">Casa Yun notes</h3>
+          <p><span data-i18n="chapterFourBody">On beginning again, learning, creating, and the gradual making of a future guesthouse.</span><span class="empty-note article-available" data-i18n="houseChapterListing">最新 · 離莊家遠一點</span><span class="empty-note article-available"><span data-i18n="pinnedLabel">Pinned</span> · <span data-i18n="prefaceTitle">Press Toward the Mark</span></span></p><span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </section>
+      <section class="chapter-detail" id="chapter-detail" aria-labelledby="chapter-detail-title" aria-live="polite" hidden>
+        <div><p class="section-label" data-i18n="selectedChapter">Selected chapter</p><h2 id="chapter-detail-title"></h2></div>
+        <div class="chapter-detail-copy"><p></p></div>
+      </section>
+    </div>
+
+    <section class="view-page" id="order" data-view-page="order" hidden aria-labelledby="order-title">
+      <div class="order-page">
+        <a class="order-back" href="#home" data-order-back data-i18n="orderBack">← Back to Casa Yun</a>
+        <header class="order-header">
+          <p class="section-label" data-i18n="orderLabel">KEKE MADELEINES · COMING SOON</p>
+          <h1 id="order-title" data-i18n="orderTitle">Madeleines are on their way</h1>
+        </header>
+
+        <div class="order-intro">
+          <p class="order-lede" data-i18n="orderLede">We're perfecting our recipe in the Casa Yun kitchen. Pre-orders aren't open yet — check back soon!</p>
+          <figure class="order-mascot">
+            <img src="assets/img-014.png" alt="Sobie in a pink pig hat and green shirt, giving a thumbs-up while holding a madeleine" />
+          </figure>
+        </div>
+
+        <div class="pickup-note">
+          <span class="pickup-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s6-5.35 6-11a6 6 0 1 0-12 0c0 5.65 6 11 6 11Z" />
+              <path d="M9 10.5h6M12 7.5v6" />
+            </svg>
+          </span>
+          <div>
+            <strong data-i18n="pickupHeading">Every Saturday</strong>
+            <span class="pickup-subtitle" data-i18n="pickupSubheading">Pick up at the church market</span>
+            <p>Saint Hilary's Episcopal Church</p>
+            <address>5011 McGregor Blvd<br />Fort Myers, FL 33901</address>
+          </div>
+        </div>
+
+        <form class="order-form" id="order-form" hidden>
+          <fieldset class="order-section">
+            <legend data-i18n="orderFlavorLegend">Flavors &amp; quantity</legend>
+            <div class="flavor-list">
+              <div class="flavor-row" data-flavor-row>
+                <label class="flavor-choice"><input type="checkbox" name="flavor" value="Vanilla" /><span><span class="flavor-name flavor-letter--vanilla" data-i18n="flavorVanilla">Vanilla</span><span class="flavor-english" data-i18n="flavorVanillaNote">Classic vanilla</span></span></label>
+                <div class="quantity-control"><label for="qty-vanilla" data-i18n="quantityBags">Bags</label><input id="qty-vanilla" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" /></div>
+              </div>
+              <div class="flavor-row" data-flavor-row>
+                <label class="flavor-choice"><input type="checkbox" name="flavor" value="Matcha" /><span><span class="flavor-name flavor-letter--matcha" data-i18n="flavorMatcha">Matcha</span><span class="flavor-english" data-i18n="flavorMatchaNote">Japanese green tea</span></span></label>
+                <div class="quantity-control"><label for="qty-matcha" data-i18n="quantityBags">Bags</label><input id="qty-matcha" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" /></div>
+              </div>
+              <div class="flavor-row" data-flavor-row>
+                <label class="flavor-choice"><input type="checkbox" name="flavor" value="Chocolate" /><span><span class="flavor-name flavor-letter--chocolate" data-i18n="flavorChocolate">Chocolate</span><span class="flavor-english" data-i18n="flavorChocolateNote">Rich cocoa</span></span></label>
+                <div class="quantity-control"><label for="qty-chocolate" data-i18n="quantityBags">Bags</label><input id="qty-chocolate" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" /></div>
+              </div>
+              <div class="flavor-row" data-flavor-row>
+                <label class="flavor-choice"><input type="checkbox" name="flavor" value="Butterfly Pea Flower" /><span><span class="flavor-name flavor-letter--butterfly" data-i18n="flavorButterfly">Butterfly Pea Flower</span><span class="flavor-english" data-i18n="flavorButterflyNote">Naturally blue botanical</span></span></label>
+                <div class="quantity-control"><label for="qty-butterfly" data-i18n="quantityBags">Bags</label><input id="qty-butterfly" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" /></div>
+              </div>
+              <div class="flavor-row" data-flavor-row>
+                <label class="flavor-choice"><input type="checkbox" name="flavor" value="Butterfly Pea &amp; Lemon" /><span><span class="flavor-name flavor-letter--lemon" data-i18n="flavorButterflyLemon">Butterfly Pea &amp; Lemon</span><span class="flavor-english" data-i18n="flavorButterflyLemonNote">Bright citrus finish</span></span></label>
+                <div class="quantity-control"><label for="qty-butterfly-lemon" data-i18n="quantityBags">Bags</label><input id="qty-butterfly-lemon" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" /></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="order-section">
+            <legend data-i18n="orderContactLegend">Pickup details</legend>
+            <div class="order-contact-grid">
+              <label class="order-field"><span data-i18n="orderName">Name</span><input id="order-name" name="name" type="text" autocomplete="name" required /></label>
+              <label class="order-field"><span data-i18n="orderEmail">Email</span><input id="order-email" name="email" type="email" autocomplete="email" required /></label>
+              <label class="order-field"><span data-i18n="orderDate">Preferred Saturday</span><input id="order-date" name="date" type="date" /></label>
+              <label class="order-field order-field--full"><span data-i18n="orderNotes">Notes</span><textarea id="order-notes" name="notes" placeholder="For example: preferred pickup time or flavor notes" data-i18n-placeholder="orderNotesPlaceholder"></textarea></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="order-section">
+            <legend data-i18n="orderPaymentLegend">Prepayment</legend>
+            <div class="payment-grid">
+              <div class="payment-option"><span><strong>PayPal</strong><span data-i18n="paymentAccount">Payment account</span></span></div>
+              <p class="payment-placeholder">elpuntoyun@gmail.com</p>
+            </div>
+          </fieldset>
+
+          <p class="order-error" id="order-error" role="alert" hidden data-i18n="orderError">Choose at least one flavor and enter the number of bags.</p>
+          <div class="order-summary" aria-live="polite">
+            <span data-i18n="orderPrice">Tentative price: $10 per bag</span>
+            <span class="order-total"><span id="order-bag-count">0</span> <span data-i18n="orderBagUnit">bags</span> · <strong id="order-total">$0</strong></span>
+          </div>
+          <button class="order-submit" type="submit" data-i18n="orderSubmit">Send pre-order request by email</button>
+          <p class="order-form-note" data-i18n="orderNote">No payment is collected on this page. After your email is sent, Casa Yun will confirm the order and pickup arrangements before you prepay with PayPal.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="view-page" id="madeleines" data-view-page="madeleines" hidden aria-labelledby="madeleines-title">
+      <div class="madeleines-stickers" aria-hidden="true">
+        <img class="sticker-1" src="assets/sobie-sticker-1.png" alt="" />
+        <img class="sticker-2" src="assets/sobie-sticker-2.png" alt="" />
+        <img class="sticker-3" src="assets/sobie-sticker-3.png" alt="" />
+        <img class="sticker-4" src="assets/sobie-sticker-4.png" alt="" />
+        <img class="sticker-5" src="assets/sobie-sticker-5.png" alt="" />
+      </div>
+      <div class="article-page">
+        <a class="article-back" href="#home" data-madeleines-back data-i18n="orderBack">← Back to Casa Yun</a>
+        <article>
+          <header class="article-header">
+            <p class="section-label"><span class="product-new-badge">✨ <span data-i18n="comingSoonBadge">Coming soon</span></span></p>
+            <h1 id="madeleines-title" data-i18n="madeleinesTitle">KEKE Madeleines</h1>
+          </header>
+          <div class="article-body">
+            <p data-i18n="productP1">It began simply because I missed something sweet.</p>
+            <p data-i18n="productP2">After going keto, dessert became the thing I longed for but hesitated to eat. So I tied on an apron in my own kitchen and tested batch after batch by the soft glow of the oven. Before long, even the furry members of the family had learned to sit in a neat row, eyes bright with anticipation.</p>
+            <p data-i18n="productP3">Then one day, little shell-shaped cakes rose into golden curves on the baking sheet. The rich aroma of browned butter filled the living room and drew everyone in.</p>
+            <p data-i18n-html="productP4"><strong>That was how KEKE was born.</strong></p>
+            <p data-i18n="productP5">Not a grain of refined sugar, yet wrapped in a wonderfully rich aroma.</p>
+            <p data-i18n="productP6">It is a gentle beginning at the breakfast table and an easy sweetness for afternoon tea. Nourishing and light — made for everyone who loves dessert and chooses to live with care.</p>
+            <h2 data-i18n="productWhyTitle">Why you will love KEKE madeleines</h2>
+            <ul class="story-points">
+              <li data-i18n-html="productPoint1"><strong>Truly keto, without the burden:</strong> Carefully selected low-carb ingredients, with no refined sugar, make it easier to stay in ketosis.</li>
+              <li data-i18n-html="productPoint2"><strong>The classic French golden curve:</strong> Delicately crisp and golden outside, soft and moist inside, with a deep buttery aroma.</li>
+              <li data-i18n-html="productPoint3"><strong>A gentle everyday ritual:</strong> Enjoy one with black coffee at breakfast or unsweetened tea in the afternoon.</li>
+            </ul>
+            <h2 data-i18n="servingTitle">Serving suggestions</h2>
+            <ul class="serving-notes">
+              <li data-i18n-html="servingOne"><strong>Enjoy as is:</strong> Thaw at room temperature to taste the pure, rich buttery flavor.</li>
+              <li data-i18n-html="servingTwo"><strong>Microwave:</strong> Warm for 5–8 seconds for an even softer, more tender crumb.</li>
+              <li data-i18n-html="servingThree"><strong>Air fryer or oven:</strong> Warm at 160°C / 320°F for 2–3 minutes to bring back the just-baked crisp outside and soft center.</li>
+            </ul>
+            <p class="product-story-closing" data-i18n="productClosing">Let this little tenderness brighten your sugar-free moment</p>
+            <p data-i18n="productOrderPrompt" hidden>▼ Choose your flavors and quantity to pre-order ▼</p>
+            <a class="order-cta" href="#order" data-open-order data-i18n="productOrderCta" hidden>Order here</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="view-page" id="moon-article" data-view-page="moon-article" hidden aria-labelledby="moon-article-title">
+      <div class="article-page">
+        <a class="article-back" href="#chapters" data-moon-article-back data-i18n="moonBack">← Back to Everyday life in America</a>
+        <article>
+          <figure class="article-hero"><img src="assets/img-013.webp" alt="Sobie holding a mooncake beneath a full moon and glowing lanterns" data-i18n-alt="moonHeroAlt" /></figure>
+          <header class="article-header">
+            <p class="section-label" data-i18n="moonCategory">EVERYDAY LIFE IN AMERICA</p>
+            <h1 id="moon-article-title" data-i18n="moonTitle">Mid-Autumn Full Moon Night: One Moon, Two Reunions</h1>
+            <time class="article-date" datetime="2026-09-25" data-i18n="moonDate">September 25, 2026</time>
+          </header>
+          <div class="article-body">
+            <p data-i18n="moonP1">Tonight at ten, while walking the dogs to the end of the street, a wash of warm golden light stopped me in my tracks.</p>
+
+            <figure class="article-photo article-photo--portrait"><img src="assets/img-015.jpg" alt="A neighbor's sukkah glowing with warm string lights at night" data-i18n-alt="moonAltOne" /></figure>
+
+            <p data-i18n="moonP2">My neighbors had built a sukkah. Strings of tiny lights hung from its roof, their warm glow slipping through the gaps in the palm leaves, while songs and laughter drifted from inside. Today was the first day of Sukkot, and it also fell on Friday evening, Shabbat—no wonder it was so lively.</p>
+
+            <p data-i18n="moonP3">I stood beneath the streetlight for a while. I could not understand the lyrics, but I understood that kind of joy—the joy of family gathered together to eat, sing, and give thanks for the harvest.</p>
+
+            <figure class="article-photo article-photo--portrait"><img src="assets/img-016.jpg" alt="A quiet nighttime street with the silhouette of a woman walking her dog" data-i18n-alt="moonAltTwo" /></figure>
+
+            <p data-i18n="moonP4">As it happens, today is also our Mid-Autumn Festival. One is Sukkot, one is Mid-Autumn; the names are different, but the dates met, and even their meanings met: gratitude for the harvest, family reunion, and prayers for peace.</p>
+
+            <figure class="article-photo article-photo--portrait"><img src="assets/img-017.jpg" alt="A bright full moon above buildings and trails of car lights" data-i18n-alt="moonAltThree" /></figure>
+
+            <p data-i18n="moonP5">Different cultures, different faiths—yet when we look up, we see the same moon. Tonight it was large and round, hanging above the palm trees, so bright that even the streetlights seemed unnecessary.</p>
+
+            <blockquote class="article-verse" data-i18n="moonP6">I thought of Psalm 133: “Behold, how good and how pleasant it is for brethren to dwell together in unity!”</blockquote>
+
+            <p data-i18n="moonP7">Tonight, the end of our street looked exactly like that verse.</p>
+
+            <figure class="article-photo article-photo--portrait"><img src="assets/img-018.jpg" alt="The full moon above the tops of palm trees" data-i18n-alt="moonAltFour" /></figure>
+
+            <p class="article-signature" data-i18n="moonP8">Happy Mid-Autumn Festival. Shabbat Shalom. May the moonlight reach you too, and may the people you love be by your side. 🌕</p>
+          </div>
+        </article>
+        <svg class="article-corner" viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+          <path class="corner-tatami" d="M4 124h260l32 52H4z" />
+          <path class="corner-tatami-line corner-line" d="M5 124h258M16 142h260M28 160h259M56 124l-22 52M112 124l-14 52M168 124l-6 52M224 124l2 52" stroke-width="1" />
+          <circle class="corner-accent" cx="58" cy="52" r="31" stroke-width="2" />
+          <path class="corner-line" d="M35 52h46M58 29v46" stroke-width="1" opacity=".35" />
+          <path class="corner-wood" d="M48 104h112v13H48zM59 117h9v39h-9zM140 117h9v39h-9z" stroke-width="1.5" />
+          <path class="corner-cup" d="M89 83h35l-4 22c-1 7-7 11-14 11s-13-4-14-11z" stroke-width="1.5" />
+          <path class="corner-cup corner-line" d="M123 89c15-1 17 17 1 18M92 84c8 4 22 4 30 0" stroke-width="2" />
+          <ellipse class="corner-tea" cx="107" cy="85" rx="14" ry="3" />
+          <path class="corner-line" d="M101 78c-7-8 7-11 0-20M113 78c7-8-6-11 1-20" stroke-width="1.8" opacity=".6" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="view-page" id="mushroom-article" data-view-page="mushroom-article" data-article-id="2" data-category="food" hidden aria-labelledby="mushroom-article-title">
+      <div class="article-page">
+        <a class="article-back" href="#chapters" data-mushroom-article-back data-i18n="mushroomBack">← Back to Food and living</a>
+        <article>
+          <figure class="article-hero"><img src="assets/img-011.webp" alt="Sobie cooking sliced mushrooms in a warm kitchen" data-i18n-alt="mushroomThumbAlt" /></figure>
+          <header class="article-header">
+            <p class="section-label" data-i18n="mushroomCategory">KETO &amp; KITCHEN</p>
+            <h1 id="mushroom-article-title" data-i18n="mushroomTitle">Small but Mighty: The Mushroom, My Keto Superfood</h1>
+            <p class="article-subtitle" data-i18n="mushroomExcerpt">Mushrooms are the superfood of my keto table — from breakfast to dinner — with real research to back it up.</p>
+            <time class="article-date" datetime="2026-10-01" data-i18n="mushroomDate">October 1, 2026</time>
+          </header>
+          <div class="article-body">
+            <p data-i18n="mushroomP1">The other day I saw a tweet calling mushrooms an underrated superfood. I couldn't agree more.</p>
+
+            <p data-i18n="mushroomP2">I love mushrooms. They're the superfood of my keto table, versatile enough to go from breakfast to dinner: mushrooms in my omelette, tofu and mushrooms as the perfect pair in miso soup, and they work in stir-fried lettuce with eggs too. Mushrooms go with eggs, tofu, meat — pretty much every protein out there; there seems to be nothing they can't pair with. And in a stew? The moment mushrooms go in, the broth turns incredibly savory — so tasty it'd make your eyebrows fall off. Mushrooms even eat like meat, full of umami.</p>
+
+            <figure class="article-photo"><img src="assets/img-003.jpg" alt="An assortment of mushroom varieties arranged and labeled in Chinese" data-i18n-alt="mushroomPhotoAlt" /></figure>
+
+            <p data-i18n="mushroomP3">A small handful of mushrooms packs astonishing nutrition. Very low in carbs, so they're keto-friendly, and rich in B vitamins, selenium, potassium, and beta-glucan fiber. Sun-dried mushrooms even contain vitamin D. Their most special compound is ergothioneine, a powerful antioxidant. Mushrooms are the richest dietary source of ergothioneine, especially shiitake, oyster, maitake, and king oyster mushrooms.</p>
+
+            <p data-i18n="mushroomP4">A 2021 Penn State meta-analysis pooling 17 studies and nearly 20,000 cancer patients found that eating about 18 grams of mushrooms a day — just a small handful — was associated with roughly 45% lower cancer risk than non-eaters. A National University of Singapore study following 663 adults over 60 for six years found that those eating more than two servings of mushrooms a week had about 50% lower odds of mild cognitive impairment. These are observational studies, but they all point the same way: people who eat mushrooms often end up with a body and brain that's hard to beat.</p>
+
+            <p class="article-verse" data-i18n="mushroomP5">One thing to remember: for safety and easier digestion, it's best to cook mushrooms thoroughly before eating!</p>
+
+            <p class="article-signature" data-i18n="mushroomP6">I eat mushrooms almost every day. For a mushroom lover like me — why not every day.</p>
+          </div>
+        </article>
+        <svg class="article-corner" viewBox="0 0 300 180" aria-hidden="true" focusable="false">
+          <path class="corner-tatami" d="M4 124h260l32 52H4z" />
+          <path class="corner-tatami-line corner-line" d="M5 124h258M16 142h260M28 160h259M56 124l-22 52M112 124l-14 52M168 124l-6 52M224 124l2 52" stroke-width="1" />
+          <g>
+            <path class="corner-green" d="M27 82c2-17 16-28 32-28 17 0 30 12 32 28z" stroke-width="1.5" />
+            <path class="corner-cup" d="M53 81h13l2 25H51z" stroke-width="1.5" />
+            <circle class="corner-accent" cx="43" cy="70" r="4" stroke-width="1" /><circle class="corner-accent" cx="63" cy="65" r="3.5" stroke-width="1" /><circle class="corner-accent" cx="75" cy="75" r="3" stroke-width="1" />
+            <path class="corner-green" d="M80 99c1-12 11-20 23-20 12 0 22 8 23 20z" stroke-width="1.5" />
+            <path class="corner-cup" d="M98 98h11l1 19H96z" stroke-width="1.5" />
+          </g>
+          <path class="corner-wood" d="M48 104h112v13H48zM59 117h9v39h-9zM140 117h9v39h-9z" stroke-width="1.5" />
+          <path class="corner-cup" d="M107 83h35l-4 22c-1 7-7 11-14 11s-13-4-14-11z" stroke-width="1.5" />
+          <path class="corner-cup corner-line" d="M141 89c15-1 17 17 1 18M110 84c8 4 22 4 30 0" stroke-width="2" />
+          <ellipse class="corner-tea" cx="125" cy="85" rx="14" ry="3" />
+          <path class="corner-line" d="M119 78c-7-8 7-11 0-20M131 78c7-8-6-11 1-20" stroke-width="1.8" opacity=".6" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="view-page" id="rename-article" data-view-page="rename-article" hidden aria-labelledby="rename-article-title">
+      <div class="article-page">
+        <a class="article-back" href="#chapters" data-rename-article-back data-i18n="renameBack">← Back to Casa Yun notes</a>
+        <article>
+          <figure class="article-hero"><img src="assets/img-012.webp" alt="Sobie, a black-and-white dog in a pink pig hat and blue cape against a Super Intelligence-inspired technology backdrop" data-i18n-alt="renameImageAlt" /></figure>
+         
