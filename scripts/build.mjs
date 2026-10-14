@@ -72,6 +72,21 @@ const POSTS = {
       ['p', 'goalP14'],
     ],
   },
+  'soul-scissors': {
+    fm: { title: 'scisTitle', subtitle: 'scisSubtitle', category: 'scisCategory', excerpt: 'scisExcerpt',
+          back_label: 'scisBack', date_display: 'scisDate', read_label: 'scisRead',
+          hero_alt: 'scisHeroAlt', photo_alt_1: 'scisPhotoAlt1',
+          featured_label: 'scisFeaturedLabel', article_read: 'scisArticleRead',
+          chapter_listing: 'scisChapterListing' },
+    blocks: [
+      ['p', 'scisP1'], ['p', 'scisP2'], ['p', 'scisP3'], ['p', 'scisP4'],
+      ['p', 'scisP5'], ['p', 'scisP6'], ['p', 'scisP7'], ['p', 'scisP8'],
+      ['p', 'scisP9'], ['p', 'scisP10'], ['p', 'scisP11'], ['p', 'scisP12'],
+      ['p', 'scisP13'],
+      ['figure', 'scisPhotoAlt1'],
+      ['p', 'scisP14'],
+    ],
+  },
   'away-from-the-house': {
     fm: { title: 'houseTitle', category: 'houseCategory', excerpt: 'houseExcerpt',
           back_label: 'houseBack', date_display: 'houseDate', read_label: 'houseRead',
@@ -280,12 +295,14 @@ function main() {
 
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
+    '<!--@CARD:soul-scissors-->': 'card-soul-scissors.html',
     '<!--@CARD:away-from-the-house-->': 'card-away-from-the-house.html',
     '<!--@CARD:toward-the-goal-->': 'card-toward-the-goal.html',
     '<!--@CARD:kefir-->': 'card-kefir.html',
     '<!--@CARD:ppk-->': 'card-ppk.html',
     '<!--@ARTICLE:ppk-->': 'article-ppk.html',
     '<!--@ARTICLE:toward-the-goal-->': 'article-toward-the-goal.html',
+    '<!--@ARTICLE:soul-scissors-->': 'article-soul-scissors.html',
     '<!--@ARTICLE:away-from-the-house-->': 'article-away-from-the-house.html',
     '<!--@ARTICLE:kefir-->': 'article-kefir.html',
   };
@@ -318,8 +335,8 @@ function main() {
 
   // 3. Chapters-list straggler: hardcoded ppkChapterListing span (default zh).
   {
-    const zhListing = posts['away-from-the-house']['zh']['houseChapterListing'];
-    const re = /(<span class="empty-note article-available" data-i18n="houseChapterListing">)[^<]*(<\/span>)/;
+    const zhListing = posts['soul-scissors']['zh']['scisChapterListing'];
+    const re = /(<span class="empty-note article-available" data-i18n="scisChapterListing">)[^<]*(<\/span>)/;
     if (!re.test(html)) throw new Error('ppkChapterListing span not found');
     html = html.replace(re, `$1${zhListing}$2`);
   }
