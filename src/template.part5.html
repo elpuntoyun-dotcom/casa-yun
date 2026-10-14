@@ -508,6 +508,11 @@ document.querySelectorAll("[data-open-rename-article]").forEach(function (link) 
         document.addEventListener("click", function () { setTimeout(inject, 120); });
         var langSelect = document.getElementById("language-select");
         if (langSelect) langSelect.addEventListener("change", function () { setTimeout(function () { stopAll(); refreshLabels(); }, 150); });
+        /* Stop speech when user navigates away or leaves the page (fix: speech kept playing with no way to stop) */
+        window.addEventListener("hashchange", function () { stopAll(); });
+        window.addEventListener("pagehide", function () { stopAll(); });
+        window.addEventListener("beforeunload", function () { stopAll(); });
+        document.addEventListener("visibilitychange", function () { if (document.hidden) stopAll(); });
       })();
     }());
   </script>
