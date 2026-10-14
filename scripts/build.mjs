@@ -72,6 +72,19 @@ const POSTS = {
       ['p', 'goalP14'],
     ],
   },
+  'away-from-the-house': {
+    fm: { title: 'houseTitle', category: 'houseCategory', excerpt: 'houseExcerpt',
+          back_label: 'houseBack', date_display: 'houseDate', read_label: 'houseRead',
+          hero_alt: 'houseHeroAlt', photo_alt_1: 'housePhotoAlt1',
+          featured_label: 'houseFeaturedLabel', article_read: 'houseArticleRead',
+          chapter_listing: 'houseChapterListing' },
+    blocks: [
+      ['p', 'houseP1'], ['p', 'houseP2'], ['p', 'houseP3'], ['p', 'houseP4'],
+      ['p', 'houseP5'], ['p', 'houseP6'], ['p', 'houseP7'], ['p', 'houseP8'],
+      ['figure', 'housePhotoAlt1'],
+      ['p', 'houseP9'], ['p', 'houseP10'], ['p', 'houseP11'], ['p', 'houseP12'],
+    ],
+  },
   'kefir': {
     fm: { title: 'kefirTitle', category: 'kefirCategory', excerpt: 'kefirExcerpt',
           back_label: 'kefirBack', date_display: 'kefirDate', read_label: 'kefirRead',
@@ -267,11 +280,13 @@ function main() {
 
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
+    '<!--@CARD:away-from-the-house-->': 'card-away-from-the-house.html',
     '<!--@CARD:toward-the-goal-->': 'card-toward-the-goal.html',
     '<!--@CARD:kefir-->': 'card-kefir.html',
     '<!--@CARD:ppk-->': 'card-ppk.html',
     '<!--@ARTICLE:ppk-->': 'article-ppk.html',
     '<!--@ARTICLE:toward-the-goal-->': 'article-toward-the-goal.html',
+    '<!--@ARTICLE:away-from-the-house-->': 'article-away-from-the-house.html',
     '<!--@ARTICLE:kefir-->': 'article-kefir.html',
   };
   for (const [ph, file] of Object.entries(partials)) {
@@ -303,8 +318,8 @@ function main() {
 
   // 3. Chapters-list straggler: hardcoded ppkChapterListing span (default zh).
   {
-    const zhListing = posts['toward-the-goal']['zh']['goalChapterListing'];
-    const re = /(<span class="empty-note article-available" data-i18n="goalChapterListing">)[^<]*(<\/span>)/;
+    const zhListing = posts['away-from-the-house']['zh']['houseChapterListing'];
+    const re = /(<span class="empty-note article-available" data-i18n="houseChapterListing">)[^<]*(<\/span>)/;
     if (!re.test(html)) throw new Error('ppkChapterListing span not found');
     html = html.replace(re, `$1${zhListing}$2`);
   }
