@@ -397,9 +397,11 @@ function main() {
       '<section class="home-stories" aria-label="Latest stories">',
       '<section class="home-stories" aria-label="Latest stories">\n' + begCard
     );
+    // Inject article HTML before the soul-scissors article section
+    // (soul-scissors placeholder already replaced by partials loop, so match its section)
     html = html.replace(
-      '<!--@ARTICLE:soul-scissors-->',
-      begArticle + '\n    <!--@ARTICLE:soul-scissors-->'
+      '<section class="view-page" id="soul-scissors-article"',
+      begArticle + '\n    <section class="view-page" id="soul-scissors-article"'
     );
   }
 
