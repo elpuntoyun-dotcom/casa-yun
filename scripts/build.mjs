@@ -363,7 +363,34 @@ function main() {
   }
 
   // 1b. Direct inject beggars-sanctuary (pinned at top, no template placeholder needed)
+  // Also inject the JS click handlers for opening/closing the article
   {
+    // Add to the delegated click handler
+    html = html.replace(
+      'var soulScissorsArticleLink = event.target.closest("[data-open-soul-scissors-article]");',
+      'var soulScissorsArticleLink = event.target.closest("[data-open-soul-scissors-article]");\n        var beggarsSanctuaryArticleLink = event.target.closest("[data-open-beggars-sanctuary-article]");'
+    );
+    html = html.replace(
+      'if (!moonArticleLink && !mushroomArticleLink && !kefirArticleLink && !renameArticleLink && !ppkArticleLink && !towardTheGoalArticleLink && !awayFromTheHouseArticleLink && !articleLink) return;',
+      'if (!moonArticleLink && !mushroomArticleLink && !kefirArticleLink && !renameArticleLink && !ppkArticleLink && !towardTheGoalArticleLink && !awayFromTheHouseArticleLink && !beggarsSanctuaryArticleLink && !articleLink) return;'
+    );
+    html = html.replace(
+      '(soulScissorsArticleLink ? "soul-scissors-article" : "article")',
+      '(soulScissorsArticleLink ? "soul-scissors-article" : (beggarsSanctuaryArticleLink ? "beggars-sanctuary-article" : "article"))'
+    );
+    // Add direct click handler
+    html = html.replace(
+      'document.querySelectorAll("[data-open-soul-scissors-article]").forEach(function (link) {',
+      'document.querySelectorAll("[data-open-beggars-sanctuary-article]").forEach(function (link) {\n        if (link.closest("#chapter-detail")) return;\n        link.addEventListener("click", function (event) {\n          event.preventDefault();\n          activateView("beggars-sanctuary-article", true);\n        });\n      });\n      document.querySelectorAll("[data-open-soul-scissors-article]").forEach(function (link) {'
+    );
+    // Add back button handler
+    html = html.replace(
+      'document.querySelector("[data-mushroom-article-back]").addEventListener("click", function (event) {',
+      'document.querySelector("[data-beggars-sanctuary-article-back]").addEventListener("click", function (event) {\n        event.preventDefault();\n        activateView("home", true);\n      });\n      document.querySelector("[data-mushroom-article-back]").addEventListener("click", function (event) {'
+    );
+  }
+  {
+
     const begCard = readFileSync(join(ROOT, 'src', 'partials', 'card-beggars-sanctuary.html'), 'utf8').replace(/\n$/, '');
     const begArticle = readFileSync(join(ROOT, 'src', 'partials', 'article-beggars-sanctuary.html'), 'utf8').replace(/\n$/, '');
     html = html.replace(
