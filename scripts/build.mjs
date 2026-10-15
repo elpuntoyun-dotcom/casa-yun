@@ -125,7 +125,7 @@ const POSTS = {
           back_label: 'begBack', date_display: 'begDate', read_label: 'begRead',
           hero_alt: 'begHeroAlt', photo_alt_1: 'begPhotoAlt1',
           featured_label: 'begFeaturedLabel', article_read: 'begArticleRead',
-          chapter_listing: 'begChapterListing' },
+          chapter_listing: 'begChapterListing', pinned_label: 'begPinned' },
     blocks: [
       ['p', 'begP1'], ['p', 'begP2'], ['p', 'begP3'], ['p', 'begP4'],
       ['p', 'begP5'], ['p', 'begP6'], ['p', 'begP7'], ['p', 'begP8'],
@@ -360,6 +360,20 @@ function main() {
     const lineRe = new RegExp('^[ \\t]*' + ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[ \\t]*$', 'm');
     if (!lineRe.test(html)) throw new Error('placeholder missing in template: ' + ph);
     html = html.replace(lineRe, () => readFileSync(join(ROOT, 'src', 'partials', file), 'utf8').replace(/\n$/, ''));
+  }
+
+  // 1a2. Add pinned badge CSS
+  {
+    const css = '<style>.pinned-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#ff6b6b,#ffa500);color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:8px;box-shadow:0 2px 8px rgba(255,107,107,.35);}</style>';
+    html = html.replace('</head>', css + '</head>');
+  }
+
+  // 1a0. Add beggars-sanctuary to Chapter One listing
+  {
+    html = html.replace(
+      'detailBody.innerHTML = \'<a class="article-entry" href="#moon-article" data-open-moon-article>',
+      'detailBody.innerHTML = \'<a class="article-entry" href="#beggars-sanctuary-article" data-open-beggars-sanctuary-article><span class="article-entry-kicker">\' + copy.begDate + \'</span><span class="article-entry-title">\' + copy.begArticleRead + \'</span></a>\' + \'<a class="article-entry" href="#moon-article" data-open-moon-article>'
+    );
   }
 
   // 1a. Move day-in-life animation from hero to About section
