@@ -293,11 +293,22 @@ function main() {
   const posts = loadPosts();
   let html = loadTemplate();
   // Inject preface card at the top
-  html = html.replace('<!--@CARD:soul-scissors-->', '<!--@CARD:preface-->\n        <!--@CARD:soul-scissors-->');
+  // preface goes at bottom (oldest first)
+  // Preface at bottom (it's the oldest article)
+  // Preface at very bottom (oldest article)
+  html = html.replace(
+    '</a>\n      </section>\n      <section class="intro"',
+    '</a>\n        <!--@CARD:preface-->\n      </section>\n      <section class="intro"'
+  );
   // Back button for chapter detail (like order page's "Back to Casa Yun")
   html = html.replace(
     '<div class="chapter-detail-copy"><p></p></div>',
-    '<div><a class="order-back" href="#chapters" data-chapter-back data-i18n="chapterBack">\u2190 Back</a></div>\n        <div class="chapter-detail-copy"><p></p></div>'
+    '<div><button type="button" class="order-back" data-chapter-back data-i18n="chapterBack">\u2190 Back</a></div>\n        <div class="chapter-detail-copy"><p></p></div>'
+  );
+  // Back button JS: collapse panel when clicked
+  html = html.replace(
+    'var detailBody = chapterDetail.querySelector(".chapter-detail-copy p");',
+    'var detailBody = chapterDetail.querySelector(".chapter-detail-copy p");' + "\n      document.addEventListener(\"click\", function (e) {\n        if (e.target.closest(\"[data-chapter-back]\")) { chapterDetail.hidden = true; }\n      });"
   );
   // TTS: stop on hashchange and when page hidden
   html = html.replace(
