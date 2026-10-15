@@ -362,6 +362,25 @@ function main() {
     html = html.replace(lineRe, () => readFileSync(join(ROOT, 'src', 'partials', file), 'utf8').replace(/\n$/, ''));
   }
 
+  // 1a. Move day-in-life animation from hero to About section
+  {
+    // Extract the figure
+    const figStart = html.indexOf('<figure class="day-in-life">');
+    const figEnd = html.indexOf('</figure>', figStart) + '</figure>'.length;
+    if (figStart !== -1 && figEnd > figStart) {
+      const figHtml = html.slice(figStart, figEnd);
+      // Remove from hero
+      html = html.slice(0, figStart) + html.slice(figEnd);
+      // Insert after homeIntroTwo paragraph
+      const anchor = '<p data-i18n="homeIntroTwo">';
+      const anchorIdx = html.indexOf(anchor);
+      if (anchorIdx !== -1) {
+        const pEnd = html.indexOf('</p>', anchorIdx) + '</p>'.length;
+        html = html.slice(0, pEnd) + '\n          ' + figHtml + html.slice(pEnd);
+      }
+    }
+  }
+
   // 1b. Direct inject beggars-sanctuary (pinned at top, no template placeholder needed)
   // Also inject the JS click handlers for opening/closing the article
   {
