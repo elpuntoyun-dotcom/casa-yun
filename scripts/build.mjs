@@ -343,7 +343,6 @@ function main() {
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
     '<!--@CARD:preface-->': 'card-preface.html',
-    '<!--@CARD:beggars-sanctuary-->': 'card-beggars-sanctuary.html',
     '<!--@CARD:soul-scissors-->': 'card-soul-scissors.html',
     '<!--@CARD:away-from-the-house-->': 'card-away-from-the-house.html',
     '<!--@CARD:toward-the-goal-->': 'card-toward-the-goal.html',
@@ -354,7 +353,6 @@ function main() {
     '<!--@ARTICLE:soul-scissors-->': 'article-soul-scissors.html',
     '<!--@ARTICLE:away-from-the-house-->': 'article-away-from-the-house.html',
     '<!--@ARTICLE:kefir-->': 'article-kefir.html',
-    '<!--@ARTICLE:beggars-sanctuary-->': 'article-beggars-sanctuary.html',
   };
   for (const [ph, file] of Object.entries(partials)) {
     // Replace the whole placeholder line (indent included) with the
@@ -362,6 +360,20 @@ function main() {
     const lineRe = new RegExp('^[ \\t]*' + ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[ \\t]*$', 'm');
     if (!lineRe.test(html)) throw new Error('placeholder missing in template: ' + ph);
     html = html.replace(lineRe, () => readFileSync(join(ROOT, 'src', 'partials', file), 'utf8').replace(/\n$/, ''));
+  }
+
+  // 1b. Direct inject beggars-sanctuary (pinned at top, no template placeholder needed)
+  {
+    const begCard = readFileSync(join(ROOT, 'src', 'partials', 'card-beggars-sanctuary.html'), 'utf8').replace(/\n$/, '');
+    const begArticle = readFileSync(join(ROOT, 'src', 'partials', 'article-beggars-sanctuary.html'), 'utf8').replace(/\n$/, '');
+    html = html.replace(
+      '<section class="home-stories" aria-label="Latest stories">',
+      '<section class="home-stories" aria-label="Latest stories">\n' + begCard
+    );
+    html = html.replace(
+      '<!--@ARTICLE:soul-scissors-->',
+      begArticle + '\n    <!--@ARTICLE:soul-scissors-->'
+    );
   }
 
   // 2. Regenerate translation values from markdown, scoped per language
