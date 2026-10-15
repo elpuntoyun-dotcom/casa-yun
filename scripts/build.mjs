@@ -120,6 +120,24 @@ const POSTS = {
       ['p', 'kefirP10'], ['p', 'kefirP11'], ['p', 'kefirP12'], ['p', 'kefirP13'], ['p', 'kefirP14'],
     ],
   },
+  'beggars-sanctuary': {
+    fm: { title: 'begTitle', subtitle: 'begSubtitle', category: 'begCategory', excerpt: 'begExcerpt',
+          back_label: 'begBack', date_display: 'begDate', read_label: 'begRead',
+          hero_alt: 'begHeroAlt', photo_alt_1: 'begPhotoAlt1',
+          featured_label: 'begFeaturedLabel', article_read: 'begArticleRead',
+          chapter_listing: 'begChapterListing' },
+    blocks: [
+      ['p', 'begP1'], ['p', 'begP2'], ['p', 'begP3'], ['p', 'begP4'],
+      ['p', 'begP5'], ['p', 'begP6'], ['p', 'begP7'], ['p', 'begP8'],
+      ['p', 'begP9'], ['p', 'begP10'], ['p', 'begP11'], ['p', 'begP12'],
+      ['p', 'begP13'], ['p', 'begP14'], ['p', 'begP15'], ['p', 'begP16'],
+      ['p', 'begP17'], ['p', 'begP18'], ['p', 'begP19'], ['p', 'begP20'],
+      ['p', 'begP21'], ['p', 'begP22'], ['p', 'begP23'], ['p', 'begP24'],
+      ['p', 'begP25'], ['p', 'begP26'], ['p', 'begP27'],
+      ['figure', 'begPhotoAlt1'],
+      ['p', 'begP28'],
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -235,7 +253,13 @@ function findMatchingBrace(text, openIdx) {
 function replaceJsValue(block, key, newValue) {
   const needle = key + ':"';
   const idx = block.indexOf(needle);
-  if (idx === -1) throw new Error('JS key not found in block: ' + key);
+  if (idx === -1) {
+    // Key not found: add it before the closing brace
+    const closeIdx = block.lastIndexOf('}');
+    if (closeIdx === -1) throw new Error('No closing brace in block');
+    const insertion = (block[closeIdx - 1] === '{' ? '' : ',') + key + ':"' + jsEscape(newValue) + '"';
+    return block.slice(0, closeIdx) + insertion + block.slice(closeIdx);
+  }
   if (block.indexOf(needle, idx + 1) !== -1) {
     throw new Error('JS key appears more than once in block, refusing: ' + key);
   }
@@ -319,6 +343,7 @@ function main() {
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
     '<!--@CARD:preface-->': 'card-preface.html',
+    '<!--@CARD:beggars-sanctuary-->': 'card-beggars-sanctuary.html',
     '<!--@CARD:soul-scissors-->': 'card-soul-scissors.html',
     '<!--@CARD:away-from-the-house-->': 'card-away-from-the-house.html',
     '<!--@CARD:toward-the-goal-->': 'card-toward-the-goal.html',
@@ -329,6 +354,7 @@ function main() {
     '<!--@ARTICLE:soul-scissors-->': 'article-soul-scissors.html',
     '<!--@ARTICLE:away-from-the-house-->': 'article-away-from-the-house.html',
     '<!--@ARTICLE:kefir-->': 'article-kefir.html',
+    '<!--@ARTICLE:beggars-sanctuary-->': 'article-beggars-sanctuary.html',
   };
   for (const [ph, file] of Object.entries(partials)) {
     // Replace the whole placeholder line (indent included) with the
