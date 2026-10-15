@@ -294,6 +294,16 @@ function main() {
   let html = loadTemplate();
   // Inject preface card at the top
   html = html.replace('<!--@CARD:soul-scissors-->', '<!--@CARD:preface-->\n        <!--@CARD:soul-scissors-->');
+  // Back button for chapter detail (like order page's "Back to Casa Yun")
+  html = html.replace(
+    '<div class="chapter-detail-copy"><p></p></div>',
+    '<div><a class="order-back" href="#chapters" data-chapter-back data-i18n="chapterBack">\u2190 Back</a></div>\n        <div class="chapter-detail-copy"><p></p></div>'
+  );
+  // TTS: stop on hashchange and when page hidden
+  html = html.replace(
+    'document.addEventListener("click", function () { setTimeout(inject, 120); });',
+    'document.addEventListener("click", function () { setTimeout(inject, 120); });\n        window.addEventListener("hashchange", function () { stopAll(); });\n        document.addEventListener("visibilitychange", function () { if (document.hidden) stopAll(); });'
+  );
 
   // 1. Inject frozen first-paint partials (byte-verbatim).
   const partials = {
