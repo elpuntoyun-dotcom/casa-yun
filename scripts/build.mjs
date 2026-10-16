@@ -368,20 +368,6 @@ function main() {
     html = html.replace('</head>', css + '</head>');
   }
 
-  // 1a0a. Move PPK to Chapter Two listing
-  {
-    // Add chapterTwo handler before chapterThree
-    html = html.replace(
-      '} else if (selectedCategory === "chapterThree") {',
-      '} else if (selectedCategory === "chapterTwo") {\n          detailTitle.innerHTML = copy.chapterTwoTitle + "<br />" + copy.categoryTwoWithArticle;\n          detailBody.innerHTML = \'<a class="article-entry" href="#ppk-article" data-open-ppk-article><span class="article-entry-kicker">\' + copy.ppkDate + \'</span><span class="article-entry-title">\' + copy.ppkArticleRead + \'</span></a>\';\n        } else if (selectedCategory === "chapterThree") {'
-    );
-    // Remove PPK from Chapter Four listing
-    html = html.replace(
-      '\' + \'<a class="article-entry" href="#ppk-article" data-open-ppk-article><span class="article-entry-kicker">\' + copy.ppkDate + \'</span><span class="article-entry-title">\' + copy.ppkArticleRead + \'</span></a>\'',
-      ''
-    );
-  }
-
   // 1a0. Add beggars-sanctuary to Chapter One listing
   {
     html = html.replace(
