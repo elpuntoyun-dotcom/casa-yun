@@ -35,6 +35,75 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LANGS = ['en', 'zh', 'zhHans', 'es', 'pt', 'ja'];
 
 // ---------------------------------------------------------------------------
+// Generate chapter listings from articles.json (data-driven, no hardcoding).
+// Returns JS code for the renderChapterDetail function.
+// ---------------------------------------------------------------------------
+function generateChapterListings() {
+  const byChapter = {};
+  for (const article of ARTICLES_CONFIG.articles) {
+    if (!byChapter[article.chapter]) byChapter[article.chapter] = [];
+    byChapter[article.chapter].push(article);
+  }
+  // Sort: pinned first, then by date descending
+  for (const chapter of Object.keys(byChapter)) {
+    const pinned = byChapter[chapter].filter(a => a.pinned).sort((a, b) => b.date.localeCompare(a.date));
+    const unpinned = byChapter[chapter].filter(a => !a.pinned).sort((a, b) => b.date.localeCompare(a.date));
+    byChapter[chapter] = [...pinned, ...unpinned];
+  }
+
+  const chapterInfo = {
+    'chapterOne': ['chapterOneTitle', 'categoryOneWithArticle'],
+    'chapterTwo': ['chapterTwoTitle', 'categoryTwoWithArticle'],
+    'chapterThree': ['chapterThreeTitle', 'mushroomChapterWithArticle'],
+    'chapterFour': ['chapterFourTitle', 'categoryFourWithArticles'],
+  };
+
+  let js = 'function renderChapterDetail(copy) {\n';
+  js += '        if (!selectedCategory) return;\n';
+  const chapters = ['chapterOne', 'chapterTwo', 'chapterThree', 'chapterFour'];
+  chapters.forEach((chapter, i) => {
+    const [titleKey, countKey] = chapterInfo[chapter];
+    const articles = byChapter[chapter] || [];
+    js += i === 0 ? `        if (selectedCategory === "${chapter}") {\n` : `        } else if (selectedCategory === "${chapter}") {\n`;
+    js += `          detailTitle.innerHTML = copy.${titleKey} + "<br />" + copy.${countKey};\n`;
+    if (articles.length === 0) {
+      js += `          detailBody.innerHTML = "";\n`;
+    } else {
+      const entries = articles.map(article => {
+        const prefix = ARTICLE_KEY_PREFIX[article.slug];
+        const articleId = article.articleId;
+        return `'<a class="article-entry" href="#${articleId}" data-open-${articleId}><span class="article-entry-kicker">' + copy.${prefix}Date + '</span><span class="article-entry-title">' + copy.${prefix}ArticleRead + '</span></a>'`;
+      });
+      js += `          detailBody.innerHTML = ${entries.join(' + ')};\n`;
+    }
+  });
+  js += '        }\n      }';
+  return js;
+}
+
+// ---------------------------------------------------------------------------
+// Article registry: single source of truth for all articles.
+// Defines which chapter each article belongs to, its display order, and
+// the HTML element IDs. Adding a new article = add entry here + markdown
+// files + partials. Moving chapters = change 'chapter' field. No code changes.
+// ---------------------------------------------------------------------------
+const ARTICLES_CONFIG = JSON.parse(readFileSync(join(ROOT, 'content', 'articles.json'), 'utf8'));
+
+// Translation key prefixes for each article (used to generate chapter listings)
+const ARTICLE_KEY_PREFIX = {
+  'beggars-sanctuary': 'beg',
+  'moon': 'moon',
+  'ppk-old-age': 'ppk',
+  'kefir': 'kefir',
+  'mushroom': 'mushroom',
+  'soul-scissors': 'scis',
+  'away-from-the-house': 'house',
+  'toward-the-goal': 'goal',
+  'rename': 'rename',
+  'preface': 'preface',
+};
+
+// ---------------------------------------------------------------------------
 // Content model: which markdown field / body block feeds which JS key.
 // `obj` names the JS object holding the keys ('shop' = shopTranslations).
 // ---------------------------------------------------------------------------
@@ -368,12 +437,34 @@ function main() {
     html = html.replace('</head>', css + '</head>');
   }
 
-  // 1a0. Add beggars-sanctuary to Chapter One listing
+  // 1a0. Generate chapter listings from articles.json (data-driven)
+  // Replaces the hardcoded renderChapterDetail with one generated from config.
+  // Adding/moving articles = update articles.json only. No code changes.
   {
-    html = html.replace(
-      'detailBody.innerHTML = \'<a class="article-entry" href="#moon-article" data-open-moon-article>',
-      'detailBody.innerHTML = \'<a class="article-entry" href="#beggars-sanctuary-article" data-open-beggars-sanctuary-article><span class="article-entry-kicker">\' + copy.begDate + \'</span><span class="article-entry-title">\' + copy.begArticleRead + \'</span></a>\' + \'<a class="article-entry" href="#moon-article" data-open-moon-article>'
-    );
+    const newRenderFn = generateChapterListings();
+    // Replace the existing renderChapterDetail function
+    const fnStart = html.indexOf('function renderChapterDetail(copy) {');
+    if (fnStart !== -1) {
+      // Find the matching closing brace by counting
+      let braceCount = 0;
+      let fnEnd = fnStart;
+      let inFunction = false;
+      for (let i = fnStart; i < html.length; i++) {
+        if (html[i] === '{') {
+          braceCount++;
+          inFunction = true;
+        } else if (html[i] === '}') {
+          braceCount--;
+          if (inFunction && braceCount === 0) {
+            fnEnd = i + 1;
+            break;
+          }
+        }
+      }
+      if (fnEnd > fnStart) {
+        html = html.slice(0, fnStart) + newRenderFn + html.slice(fnEnd);
+      }
+    }
   }
 
   // 1a. Move day-in-life animation from hero to About section
