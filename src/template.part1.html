@@ -785,6 +785,7 @@
 
     .home-stories { border-top: 3px solid var(--ink); }
     .home-feature {
+      position: relative;
       display: grid;
       grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
       gap: clamp(24px, 4vw, 48px);
@@ -801,6 +802,28 @@
       border-radius: 2px;
       box-shadow: 0 10px 24px var(--shadow);
     }
+    .pinned-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 22px 12px 17px;
+      font-family: "Quicksand", "Zen Maru Gothic", sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: #fff;
+      background: linear-gradient(135deg, #ef7d32 0%, #d95f2b 60%, #c74f22 100%);
+      border-radius: 46% 54% 52% 48% / 58% 46% 54% 42%;
+      transform: rotate(-5deg);
+      box-shadow: 0 8px 20px rgba(180, 80, 20, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      white-space: nowrap;
+    }
+    .pinned-badge [aria-hidden="true"] { font-size: 19px; }
     .home-feature-copy h2 {
       margin: 7px 0 10px;
       font-family: var(--font-article-title);
