@@ -419,7 +419,7 @@ function main() {
     // Add back button handler
     html = html.replace(
       'document.querySelector("[data-mushroom-article-back]").addEventListener("click", function (event) {',
-      'document.querySelector("[data-beggars-sanctuary-article-back]").addEventListener("click", function (event) {\n        event.preventDefault();\n        activateView("home", true);\n      });\n      document.querySelector("[data-mushroom-article-back]").addEventListener("click", function (event) {'
+      'document.querySelector("[data-beggars-sanctuary-article-back]").addEventListener("click", function (event) {\n        event.preventDefault();\n        activateView("chapters", true);\n        selectedCategory = "chapterOne";\n        document.querySelectorAll(".chapter").forEach(function (item) { item.classList.toggle("is-selected", item.getAttribute("data-category") === "chapterOne"); });\n        chapterDetail.hidden = false;\n        renderChapterDetail(translations[currentLanguage]);\n        window.setTimeout(function () {\n          chapterDetail.scrollIntoView({ behavior: "smooth", block: "start" });\n        }, 0);\n      });\n      document.querySelector("[data-mushroom-article-back]").addEventListener("click", function (event) {'
     );
   }
   {
