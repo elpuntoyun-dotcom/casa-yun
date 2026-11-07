@@ -61,6 +61,10 @@ function generateChapterListings() {
   let js = 'function renderChapterDetail(copy) {\n';
   js += '        if (!selectedCategory) return;\n';
   const chapters = ['chapterOne', 'chapterTwo', 'chapterThree', 'chapterFour'];
+  // Global article numbers (01-10) in display order: chapters in order,
+  // pinned first then newest first within each chapter. A new article
+  // automatically gets the next number.
+  let seq = 0;
   chapters.forEach((chapter, i) => {
     const [titleKey, countKey] = chapterInfo[chapter];
     const articles = byChapter[chapter] || [];
@@ -72,7 +76,9 @@ function generateChapterListings() {
       const entries = articles.map(article => {
         const prefix = ARTICLE_KEY_PREFIX[article.slug];
         const articleId = article.articleId;
-        return `'<a class="article-entry" href="#${articleId}" data-open-${articleId}><span class="article-entry-kicker">' + copy.${prefix}Date + '</span><span class="article-entry-title">' + copy.${prefix}ArticleRead + '</span></a>'`;
+        seq += 1;
+        const num = String(seq).padStart(2, '0');
+        return `'<a class="article-entry" href="#${articleId}" data-open-${articleId}><span class="article-entry-num">${num}</span><span class="article-entry-kicker">' + copy.${prefix}Date + '</span><span class="article-entry-title">' + copy.${prefix}ArticleRead + '</span></a>'`;
       });
       js += `          detailBody.innerHTML = ${entries.join(' + ')};\n`;
     }
