@@ -473,6 +473,16 @@ function main() {
     }
   }
 
+  // 1a1. Fill in the total article count on the Chapters page.
+  // chaptersTotal uses a {n} placeholder in all six languages (and in the
+  // header's fallback text); the build replaces it with the live count
+  // from articles.json, so the total stays correct when articles are
+  // added. ({n} appears nowhere else in the template.)
+  {
+    const total = ARTICLES_CONFIG.articles.length;
+    html = html.split('{n}').join(String(total));
+  }
+
   // 1a. Move day-in-life animation from hero to About section
   {
     // Extract the figure
