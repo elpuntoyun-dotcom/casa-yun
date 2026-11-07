@@ -155,7 +155,17 @@
           else link.removeAttribute("aria-current");
         });
         document.body.setAttribute("data-view", view);
-        if (updateHash && history.replaceState) history.replaceState(null, "", "#" + view);
+        if (updateHash) {
+          // pushState (not replaceState) so every view gets its own history
+          // entry: browser Back then returns to the previous view instead
+          // of leaving the site. Skip the push when already on this hash
+          // so clicking the active nav link does not stack duplicates.
+          if (history.pushState && location.hash.slice(1) !== view) history.pushState(null, "", "#" + view);
+          // pushState does not fire hashchange, so dispatch one: the TTS
+          // player stops speech on hashchange, and the view listener simply
+          // re-activates this same view (no-op).
+          window.dispatchEvent(new Event("hashchange"));
+        }
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
